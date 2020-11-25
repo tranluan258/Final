@@ -39,8 +39,29 @@
             }
         }
 
-        public  function  add_thongbao(){
-
+        public function add_notice(){
+            if(isset($_POST['addnotice'])){
+                $error = '';
+                $info = '';
+                $username = $_SESSION['username'];
+                $code = $_SESSION['currentcode'];
+                if(isset($_POST['noticeinfo'])){
+                    $noticeinfo = $_POST['noticeinfo'];
+                    if(empty($noticeinfo)){
+                        $error = 'Vui lòng nhập thông báo';
+                    }else{
+                        $subject = new SubjectModel();
+                        $result = $subject->add_notice($code,$username,$noticeinfo);
+                        if ($result['code'] == 1) {
+                            $error = 'Đăng thông báo thất bại';
+                        } else {
+                            $error = 'Đăng thông báo thành công';
+                        }
+                    }
+                    $_SESSION['error'] = $error;
+                    header("Location: http://localhost:8080/Final/");
+                }
+            }
         }
 
         public function join_code(){
@@ -60,13 +81,27 @@
         }
 
         public function detail(){
-            $error = '';
-            if(isset($_POST['joinintoclass'])){
-                echo $_POST['currentcode'];
+            $error = 'Xin chào'. ' '. $_SESSION['yourname'] . '!';;
+            if(!isset($_POST['joinintoclass'])){
+                header("Location: http://localhost/Final");
+                exit();
+            }else{
+                $subject = new SubjectModel();
+
+                $result = $subject->view_notice($_POST['currentcode']);
+
+                if(isset($_SESSION['error'])){
+                    $error =$_SESSION['error'];
+                    unset($_SESSION['error']);
+                }
+                $_SESSION['currentcode'] = $_POST['currentcode'];
+                $data = array("errordetail"=>$error, 'type'=>$_SESSION['type'],'notice'=>$result);
+
+                $this->render('detail.html',$data);
             }
-            $this->render('detail.html');
-            
         }
+
+
 
     }
 ?>

@@ -10,12 +10,25 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37019a64-43c3-4573-98e9-aef5311ad553" name="Default Changelist" comment="add search">
+    <list default="true" id="37019a64-43c3-4573-98e9-aef5311ad553" name="Default Changelist" comment="change subject">
+      <change afterPath="$PROJECT_DIR$/app/view/content/detail.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/content/detail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/content/image/student.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/content/image/teacher.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controller/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/AccountController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/AccountModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/AccountModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/BaseModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/BaseModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/templates/view_account.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/templates/view_account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controller/SubjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/SubjectController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/content/all.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/content/all.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/templates/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/templates/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/platform_check.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/platform_check.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +42,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
         <option value="CSS File" />
       </list>
     </option>
@@ -57,7 +70,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/view/content/image" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -71,6 +84,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Final\app\view\content\image" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Final\app\view\templates" />
     </key>
@@ -93,6 +109,8 @@
       <workItem from="1606288983465" duration="51000" />
       <workItem from="1606289716379" duration="2753000" />
       <workItem from="1606292514938" duration="154000" />
+      <workItem from="1606304949557" duration="2049000" />
+      <workItem from="1606307068119" duration="1290000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1606289379352</created>
@@ -129,14 +147,7 @@
       <option name="project" value="LOCAL" />
       <updated>1606295364476</updated>
     </task>
-    <task id="LOCAL-00006" summary="add search">
-      <created>1606298090237</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1606298090237</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,8 +169,7 @@
     <MESSAGE value="test" />
     <MESSAGE value="profile" />
     <MESSAGE value="change profile" />
-    <MESSAGE value="add search" />
-    <option name="LAST_COMMIT_MESSAGE" value="add search" />
+    <option name="LAST_COMMIT_MESSAGE" value="change profile" />
   </component>
   <component name="WindowStateProjectService">
     <state x="574" y="114" key="#com.intellij.ide.util.MemberChooser" timestamp="1606286233521">
@@ -170,6 +180,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1606283884876" />
+    <state x="147" y="69" key="MergeDialog" timestamp="1606298638290">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="147" y="69" key="MergeDialog/0.0.1536.864@0.0.1536.864" timestamp="1606298638290" />
     <state x="604" y="356" key="NewPhpFileDialog" timestamp="1606285631729">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -178,13 +192,13 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="277" y="77" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1606234925272" />
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1606298091875">
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1606295370106">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1606298091875" />
-    <state x="586" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606292540456">
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1606295370106" />
+    <state x="586" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606304956865">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="586" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1606292540456" />
+    <state x="586" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1606304956865" />
   </component>
 </project>

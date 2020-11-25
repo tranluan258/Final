@@ -48,5 +48,34 @@
                 }
             }
         }
+
+        public function view_notice($code){
+            $sql = "select id,username,information,datepost from notice where class = ?";
+            $params = array('s',&$code);
+            $dataSubject = $this->query_prepare_select($sql,$params);
+            if($dataSubject['code'] == 1){
+                $error = 'Lỗi';
+            }else{
+                $data = array();
+
+                while ($item = $dataSubject['data']->fetch_assoc()){
+                    array_push($data,array('idnotice'=>$item['id'],'username'=>$item['username'],'information'=>$item['information'],'datepost'=>$item['datepost']));
+                }
+                return array('data'=>$data);
+            }
+        }
+
+        public function add_notice($code,$username,$information){
+            $sql = "insert into notice(class,username,information) values (?,?,?)";
+            $params = array('sss',&$code,&$username,&$information);
+
+            $data = $this->query_prepare_insert($sql,$params);
+
+            if($data['code']==1){
+                return array('code'=>1, 'message'=>'Đăng thông báo thất bại!');
+            }else{
+                return array('code'=>0, 'message'=>'Đăng thông báo thành công!');
+            }
+        }
     }
 ?>

@@ -19,6 +19,10 @@
 
 <body>
 <br>
+<div class="alert alert-dark alert-dismissible error_index" role="alert">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    {{ errordetail }}
+</div>
 
 <div class="container">
     <br>
@@ -28,7 +32,7 @@
         <!-- Links -->
         <ul class="nav nav-tabs justify-content-center" style="width:100%;">
             <li class="nav-item" style="width:30%;">
-                <a href="https://fb.com/phungtienxinhdep" target="_self">
+                <a href="../" target="_self">
                     <div class="w3-xlarge w3-text-black" style="font-size:30px">
                         <i class="fa fa-home"></i>
                     </div>
@@ -53,9 +57,12 @@
                     &vellip;
                 </a>
                 <div class="dropdown-menu detailmenuopen">
+                    {% if type == 1 %}
                     <a class="dropdown-item detailmenuopen" href="#"> <i class='far fa-trash-alt detailmenuopenicon'></i> Xoá lớp học</a>
                     <a class="dropdown-item detailmenuopen" href="#"> <i class='far fa-edit detailmenuopenicon'></i> Sửa thông tin lớp học</a>
+                    {% elseif type == 0 %}
                     <a class="dropdown-item detailmenuopen" href="#"> <i class="material-icons detailmenuopenicon">exit_to_app</i> Thoát khỏi lớp học</a>
+                    {% endif %}
                 </div>
             </li>
         </ul>
@@ -71,13 +78,14 @@
                         <div class="avt-stream content-child">
                             <img src="../app/view/content/image/teacher.png" alt="Mai Văn Mạnh" class="avt rounded-circle" style="float:left;padding:2px;">
                         </div>
-                        <form action="upload.php" method="post" enctype="multipart/form-data">
-                            <textarea class="topcomment" oninput="auto_grow(this)" placeholder=" Share something with your class here.."></textarea>
-                            <button type="button" class="btn btn-primary posttopdetail">Post</button>
+                        <form action="add_notice" method="post" enctype="multipart/form-data">
+                            <textarea class="topcomment" oninput="auto_grow(this)" placeholder=" Share something with your class here.." name="noticeinfo"></textarea>
+                            <button type="submit" class="btn btn-primary posttopdetail" name="addnotice">Post</button>
                         </form>
                     </li>
                     <li class="list-group-item">
-                        <a href="#demo" class="btn content-stream" data-toggle="collapse">
+                        {% for i in notice.data %}
+                        <a href="#{{i.username}}{{ i.idnotice }}" class="btn content-stream" data-toggle="collapse">
                             <div class="content-child p-3">
                                 <div class="media-body" style="float:left;">
                                     <div>
@@ -86,21 +94,21 @@
                                                 <img src="../app/view/content/image/teacher.png" alt="Mai Văn Mạnh" class="avt rounded-circle">
                                             </div>
                                             <div class="status" style="float:left;">
-                                                Mai Văn Mạnh
+                                                {{ i.username }}
                                                 <br>
-                                                <i style="font-size:11px">Posted on February 19, 2016
+                                                <i style="font-size:11px">Posted on {{ i.datepost }}
                                                 </i>
                                             </div>
                                         </h4>
                                     </div>
                                     <br><br><br><br>
                                     <p style="text-align:left">
-                                        Thầy yêu mấy em mlem mlem mlem
+                                        {{ i.information }}
                                     </p>
                                 </div>
                             </div>
                         </a>
-                        <div id="demo" class="collapse openstream">
+                        <div id="{{i.username}}{{ i.idnotice }}" class="collapse openstream">
                             <!-- Noi dung cmt cua hoc sinh 1 -->
                             <div class="statusopenstream">
                                 <div class="namecommentstream">
@@ -149,6 +157,7 @@
                                 </form>
                             </div>
                         </div>
+                        {% endfor %}
                     </li>
                     <li class="list-group-item" style="text-align:center">. . .</li>
                 </ul>
@@ -201,7 +210,7 @@
                             <p style="text-align:left">Nộp bài lab 2</p>
                         </div>
                     </a>
-                    <div id="" class="collapse" style="padding:20px">
+                    <div id="demo" class="collapse" style="padding:20px">
                         <a href="https://fb.com/phungtienxinhdep" target="_self">View assignment</a>
                     </div>
                 </li>
