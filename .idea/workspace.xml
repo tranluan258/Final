@@ -10,25 +10,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37019a64-43c3-4573-98e9-aef5311ad553" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/controller/DetailController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/model/DetailModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/view/account/forgot.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/view/templates/forgot.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/base/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/base/BaseController.php" afterDir="false" />
+    <list default="true" id="37019a64-43c3-4573-98e9-aef5311ad553" name="Default Changelist" comment="test">
       <change beforePath="$PROJECT_DIR$/app/controller/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/AccountController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/AccountModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/AccountModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/BaseModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/BaseModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/SubjectModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/SubjectModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/content/all.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/content/all.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/platform_check.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/platform_check.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,6 +103,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="WindowStateProjectService">
     <state x="574" y="114" key="#com.intellij.ide.util.MemberChooser" timestamp="1606286233521">
