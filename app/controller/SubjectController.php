@@ -80,6 +80,7 @@
             }
         }
 
+
         public function detail()
         {
             $error = 'Xin chào' . ' ' . $_SESSION['yourname'] . '!';;
