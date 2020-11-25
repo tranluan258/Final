@@ -11,24 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37019a64-43c3-4573-98e9-aef5311ad553" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/controller/DetailController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/model/DetailModel.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/view/account/forgot.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/view/templates/forgot.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/git" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/base/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/base/BaseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controller/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/AccountController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/AccountModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/AccountModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/BaseModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/BaseModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/SubjectModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/SubjectModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/content/all.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/content/all.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/platform_check.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/platform_check.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +86,7 @@
       <workItem from="1606283888212" duration="545000" />
       <workItem from="1606284699681" duration="375000" />
       <workItem from="1606285084270" duration="2502000" />
-      <workItem from="1606287603731" duration="924000" />
+      <workItem from="1606287603731" duration="1556000" />
     </task>
     <servers />
   </component>
@@ -122,6 +106,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="545" y="234" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606288787361">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="545" y="234" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864@0.0.1536.864" timestamp="1606288787361" />
     <state x="574" y="114" key="#com.intellij.ide.util.MemberChooser" timestamp="1606286233521">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
