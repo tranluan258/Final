@@ -159,7 +159,7 @@
                     } else if ($data['code'] == 2) {
                         $error = "Email không tồn tại";
                     } else {
-                        $error = "Mật khẩu đã được gửi về mail";
+                        $error = "Mật khẩu đã được gửi về mail!";
                     }
 
                 }
