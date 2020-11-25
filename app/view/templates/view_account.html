@@ -31,34 +31,25 @@
             </div>
         </div>
     </div>
+    {% for i in data.data %}
     <div class="col-md-12 col-sm-12 col-xs-12 row-account">
         <div class="account_box">
-            <form>
+            <form action="" method="post">
                 <div class="text_account_box">
-                    <p class="username_pq">tranluan157</p>
-                    <p class="name_pq">Tran Luan</p>
-                    <p class="type_pq">Sinh vien</p>
-                    <button class="button_set_gv">Giảng viên</button>
-                    <button class="button_set_sv">Sinh viên</button>
+                    <input style="display: none" name="username" value="{{ i.username}}">
+                    <p class="username_pq">{{ i.username}}</p>
+                    <p class="name_pq">{{ i.yourname }}</p>
+                    {% if i.type == 0 %}
+                    <p class="type_pq">Sinh Viên</p>
+                    {% else %}
+                    <p class="type_pq">Giảng Viên</p>
+                    {% endif %}
+                    <button type="submit" name="set_type" class="button_set_gv">Cấp quyền</button>
                 </div>
             </form>
         </div>
     </div>
-
-    <div class="col-md-12 col-sm-12 col-xs-12 row-account">
-        <div class="account_box">
-            <form>
-                <div class="text_account_box">
-                    <p class="username_pq">linhkook</p>
-                    <p class="name_pq">Le Quang Linh</p>
-                    <p class="type_pq">Bao ve</p>
-                    <button class="button_set_gv">Giảng viên</button>
-                    <button class="button_set_sv">Sinh viên</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
+    {% endfor %}
 </div>
 </body>
 </html>

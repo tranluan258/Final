@@ -173,8 +173,14 @@
             $this->render('profile.html',array('data'=>$data));
         }
 
-        public function  view_account(){
-            $this->render("view_account.html");
+        public function view_account(){
+            $account = new AccountModel();
+           if(isset($_POST['set_type'])){
+               $username = $_POST['username'];
+               $result = $account->update_type($username);
+           }
+           $data = $account->get_all();
+           $this->render('view_account.html',array('data'=>$data));
         }
     }
 ?>

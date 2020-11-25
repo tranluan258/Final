@@ -7,7 +7,10 @@
 
         function get_all()
         {
+            $sql = 'select * from account  where not type = 2';
+            $data = $this->query_account($sql);
 
+            return array('data'=>$data['data']);
         }
 
         function get_by_id($id)
@@ -207,6 +210,14 @@
             $data = $this->query_one_select($sql,$param);
 
             return $data['data'];
+        }
+
+        public function update_type($username){
+            $sql = 'update account set type = 1 where username = ?';
+            $param = array('s',&$username);
+            $data = $this->query_prepare_update($sql,$param);
+
+            return $data['code'];
         }
     }
 ?>

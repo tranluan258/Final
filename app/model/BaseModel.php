@@ -21,6 +21,19 @@
             return array('data'=>$data);
         }
 
+        public function query_account($sql){
+            $result = $this->db->query($sql); //thieu db;
+            if(!$result){
+                return array('code'=>1,'error'=>$this->db->error);
+            }
+            $data = array();
+            while($item = $result->fetch_assoc()){
+                array_push($data,array('username'=>$item['username'],'yourname'=>$item['yourname'],'type'=>$item['type']));
+            }
+
+            return array('data'=>$data);
+        }
+
         public function query_prepare_select($sql,$param){
             $stm = $this->db->prepare($sql);
             call_user_func_array(array($stm,'bind_param'),$param);
