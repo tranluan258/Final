@@ -20,6 +20,7 @@
 
             return array('data'=>$data);
         }
+
         public function query_prepare_select($sql,$param){
             $stm = $this->db->prepare($sql);
             call_user_func_array(array($stm,'bind_param'),$param);
@@ -51,6 +52,7 @@
             }
             return array('data'=>$data);
         }
+
         public function query_prepare_insert($sql,$param){
             $stm = $this->db->prepare($sql);
             call_user_func_array(array($stm,'bind_param'),$param);

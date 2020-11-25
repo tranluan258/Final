@@ -17,9 +17,5 @@
             echo $this->twig->render($view_path,$data);
         }
 
-        public function  index(){
-            echo "Index is working on " . get_called_class();
-        }
-
     }
 ?>

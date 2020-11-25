@@ -453,3 +453,52 @@ img {
 
 }
 
+
+
+/*forgot*/
+.row-container_forgotpassword {
+    border: 1px solid rgb(156, 150, 150);
+    background-color: white;
+    margin: 5%;
+    padding: 30px;
+    -webkit-box-shadow: 0px 1px 22px 5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 1px 22px 5px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 1px 22px 5px rgba(0, 0, 0, 0.75);
+}
+.forgot_password{
+    display: flex;
+    flex-direction: row;
+}
+.box_email_forgot{
+    width: 100%;
+    border-radius: 10px 10px;
+
+}
+.button_send_email_forgot{
+    width: 20%;
+    margin-left: 10px;
+    border-radius: 10px 10px;
+    font-weight: bold;
+    background-color: #ff1d68;
+    border-color: #ff1d68;
+}
+.text_note_forgot_password{
+    margin: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+.text_note2_forgot_password{
+    margin: 10px;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 18px;
+}
+.text_note3_forgot_password{
+    margin: 5px;
+    line-height: 40px;
+    font-size: 16px;
+}
+.body_forgotpassword{
+    background-color: #ff1d68;
+}
+

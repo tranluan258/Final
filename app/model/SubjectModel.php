@@ -11,6 +11,7 @@
             // TODO: Implement get_by_id() method.
         }
 
+
         public function add_subject($teacher,$classname,$subjectname,$room){
             $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
             $charactersLength = strlen($characters);

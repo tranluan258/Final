@@ -141,21 +141,27 @@
                 return array('code'=>2,'message'=>'Email not found');
             }
 
-            $this->sendEmailResetPass($email);
-            return array('code'=>0,'message'=>'Success');
-        }
-
-        public function resetpassword(){
-            
-        }
-
-        public function sendEmailResetPass($email){
             $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
             $charactersLength = strlen($characters);
             $code = '';
-            for ($i = 0; $i < 32; $i++) {
+            for ($i = 0; $i < 7; $i++) {
                 $code .= $characters[rand(0, $charactersLength - 1)];
             }
+            $hash = password_hash($code,PASSWORD_DEFAULT);
+            $sql = "update account set password = '$hash' where email = ?";
+            $param = array('s',&$email);
+
+            $data = $this->query_prepare_update($sql,$param);
+
+            if($data['code'] == 1){
+                return array('code'=>1,"message"=>'Xảy ra lỗi');
+            }else{
+                $this->sendEmailPass($email,$code);
+                return array('code'=>0,'message'=>'Thành công');
+            }
+        }
+
+        public function sendEmailPass($email,$code){
             $mail = new PHPMailer(true);
 
             try {
@@ -183,8 +189,8 @@
 
                 // Content
                 $mail->isHTML(true);                                  // Set email format to HTML
-                $mail->Subject = 'Reset Password';
-                $mail->Body    = "Click vào <a href='http://localhost/Final/account/actived?email=$email&code=$code'>Vào đây</a>để reset password";
+                $mail->Subject = 'Forgot Password';
+                $mail->Body    = "Đây là mật khẩu mới: $code của bạn vui lòng đăng nhập để đổi mật khẩu";
                 //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
                 $mail->send();

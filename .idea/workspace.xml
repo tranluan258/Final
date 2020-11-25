@@ -1,8 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="37019a64-43c3-4573-98e9-aef5311ad553" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/controller/DetailController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/model/DetailModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/account/forgot.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/templates/forgot.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/base/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/base/BaseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controller/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/AccountController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/AccountModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/AccountModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/BaseModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/BaseModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/SubjectModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/SubjectModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/content/all.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/content/all.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/platform_check.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/platform_check.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +44,7 @@
       <list>
         <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -40,6 +67,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -51,8 +79,14 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Final\app\view\templates" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -66,20 +100,47 @@
       <workItem from="1606230116455" duration="5102000" />
       <workItem from="1606283816871" duration="69000" />
       <workItem from="1606283888212" duration="545000" />
+      <workItem from="1606284699681" duration="375000" />
+      <workItem from="1606285084270" duration="2502000" />
+      <workItem from="1606287603731" duration="924000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="574" y="114" key="#com.intellij.ide.util.MemberChooser" timestamp="1606286233521">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="574" y="114" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1606286233521" />
     <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1606283884876">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1606283884876" />
+    <state x="604" y="356" key="NewPhpFileDialog" timestamp="1606285631729">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="604" y="356" key="NewPhpFileDialog/0.0.1536.864@0.0.1536.864" timestamp="1606285631729" />
     <state x="277" y="77" key="SettingsEditor" timestamp="1606234925272">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="277" y="77" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1606234925272" />
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1606284956321">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1606284956321" />
   </component>
 </project>

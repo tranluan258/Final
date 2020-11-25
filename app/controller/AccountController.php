@@ -144,34 +144,27 @@
             $this->render('actived.html',array('data'=>$error));
         }
 
-        public function reset(){ 
-            $error = '';
-            if (isset($_GET['email']) && isset($_GET['code'])) {
-                $email = $_GET['email'];
-                $code = $_GET['code'];
-                if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
-                    $error = 'Invalid email address';
-                } else if (strlen($code) != 32) {
-                    $error = 'Invalid token format';
-                }else{
-                    //check form reset
-                    $password = "";
-                    $account = new AccountModel();
-                    $result = $account->resetpassword($email, $password);
-                    if($result['code'] == 0){
-                        $error = 'Thành công';
-                    }else{
-                        $error = $result['message'];
-                    }
-                }
-            } else {
-                $error = 'Invalid url';
-            }
-            $this->render('reset.html',array('data'=>$error));
-        }
 
-        public function forgot(){ 
-            //check form forgot;
+        public function forgot()
+        {
+            $error = '';
+            if (isset($_POST['button_send_email_forgot'])) {
+                if (empty($_POST['email_forgot'])) {
+                    $error = "Vui lòng nhập email";
+                } else {
+                    $account = new AccountModel();
+                    $data = $account->forgot($_POST['email_forgot']);
+                    if ($data['code'] == 1) {
+                        $error = "Xảy ra lỗi";
+                    } else if ($data['code'] == 2) {
+                        $error = "Email không tồn tại";
+                    } else {
+                        $error = "Mật khẩu đã được gửi về mail";
+                    }
+
+                }
+            }
+            $this->render('forgot.html', array("error" => $error));
         }
     }
 ?>
