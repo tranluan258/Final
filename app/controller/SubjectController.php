@@ -59,7 +59,7 @@
                         }
                     }
                     $_SESSION['error'] = $error;
-                    header("Location: http://localhost:8080/Final/");
+                    header("Location: http://localhost:8080/Final/subject/detail");
                 }
             }
         }
@@ -80,28 +80,29 @@
             }
         }
 
-        public function detail(){
-            $error = 'Xin chào'. ' '. $_SESSION['yourname'] . '!';;
-            if(!isset($_POST['joinintoclass'])){
-                header("Location: http://localhost/Final");
-                exit();
-            }else{
-                $subject = new SubjectModel();
+        public function detail()
+        {
+            $error = 'Xin chào' . ' ' . $_SESSION['yourname'] . '!';;
 
-                $result = $subject->view_notice($_POST['currentcode']);
-
-                if(isset($_SESSION['error'])){
-                    $error =$_SESSION['error'];
-                    unset($_SESSION['error']);
-                }
-                $_SESSION['currentcode'] = $_POST['currentcode'];
-                $data = array("errordetail"=>$error, 'type'=>$_SESSION['type'],'notice'=>$result);
-
-                $this->render('detail.html',$data);
+            $subject = new SubjectModel();
+            if(isset($_POST['joinintoclass'])){
+                unset($_SESSION['currentcode']);
             }
+            if (isset($_SESSION['currentcode'])) {
+                $result = $subject->view_notice($_SESSION['currentcode']);
+            }else{
+                $result = $subject->view_notice($_POST['currentcode']);
+                $_SESSION['currentcode'] = $_POST['currentcode'];
+            }
+
+            if (isset($_SESSION['error'])) {
+                $error = $_SESSION['error'];
+                unset($_SESSION['error']);
+            }
+
+            $data = array("errordetail" => $error, 'type' => $_SESSION['type'], 'notice' => $result);
+
+            $this->render('detail.html', $data);
         }
-
-
-
     }
 ?>
