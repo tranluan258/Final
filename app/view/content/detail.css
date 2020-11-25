@@ -1,0 +1,227 @@
+.status {
+    display: inline
+}
+
+.content-stream {
+    width: 100%;
+}
+
+.post-detail {
+    width: 20%;
+}
+
+.topcomment {
+    width: 80%;
+    border-radius: 15px;
+}
+
+.posttopdetail {
+    margin: 9px;
+    padding: 5px;
+    width: 10%;
+    float: right;
+}
+
+.topcomment_stream {
+    width: 80%;
+    float: left;
+    padding: 10px;
+    border-style: none;
+    border-radius: 10px;
+    min-height: 40px;
+}
+
+.commentbox {
+    width: 80%;
+    height: 40px;
+    border-radius: 25px;
+    min-height: 20px;
+    padding: 5px;
+    max-height: 200px;
+}
+
+.boxccommentstream {
+    margin: 10px;
+}
+
+.postdetail {
+    width: 15%;
+    float: right;
+}
+
+.openstream {
+    width: 100%;
+    padding: 20px;
+}
+
+.statusopenstream {
+    float: left;
+    width: 100%;
+    height: 40px;
+}
+
+.namecommentstream {
+    float: left;
+    width: 16%;
+}
+
+.avtcommentstream {
+    float: left;
+    padding: 2px;
+}
+
+.detailcommentstream {
+    float: left;
+    width: 60%;
+}
+
+.deletecommentstream {
+    color: gray;
+    float: right;
+}
+
+.detailmenuopen {
+    color: gray;
+}
+
+.detailmenuopenicon {
+    font-size: 20px;
+}
+
+.studentclassmates {
+    width: 100%;
+}
+
+.namestudentclassmates {
+    width: 99%;
+    float: left;
+}
+
+.deletestudentclassmates {
+    font-size: 10px;
+    float: right;
+    padding: 4px;
+}
+
+.deletestudentclassmatesdetail {
+    float: right;
+    font-size: 10px;
+}
+
+.btnaddstudentpeople {
+    float: right;
+    font-size: 20px;
+}
+
+.listclassmates {
+    width: 100%;
+}
+
+.chucvuclassmates {
+    width: 30%;
+}
+
+.avt {
+    width: 60px;
+    height: 60px;
+}
+
+.avt-people {
+    width: 40px;
+    height: 40px;
+}
+
+.list-group-item {
+    border-radius: 6px;
+    margin: 1px;
+}
+
+.postassignmentzone {
+    width: 100%;
+}
+
+.content-child {
+    margin: 1px;
+}
+
+.custom-file {
+    width: 100%;
+;
+}
+
+.custom-file-label {
+    float: right;
+    width: 40%;
+}
+
+.newpost-detail {
+    border-radius: 10px;
+    width: 100%;
+}
+
+.content {
+    vertical-align: middle;
+    margin: auto;
+    padding: 30px;
+}
+
+#people {
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.chucvu {
+    font-size: 30px;
+    color: #206ACF;
+    border-bottom: 1px solid #206ACF;
+}
+
+.view-assignment-detail {
+    color: #206ACF;
+}
+
+.name-member {
+    color: black;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.mr-3 {
+    margin: auto;
+    padding: 1px;
+}
+
+.list-member {
+    padding: 10px;
+    margin: 10px;
+}
+
+.content ul {
+    margin: auto;
+}
+
+.name-teachers,
+.name-classmates {
+    font-size: 15px
+}
+
+#demo {
+    float: left;
+}
+
+.item-stream {
+    box-shadow: 10px 10px;
+}
+
+.nav-tabs {
+    width: 100%;
+}
+
+.name_comment_stream {
+    width: 10%;
+    float: left;
+}
+
+.detail_comment_stream {
+    width: 80%;
+    float: right;
+}

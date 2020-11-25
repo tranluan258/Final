@@ -1,12 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
-{{ currentcode }}
+<head>
+    <title>Inside the card</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../app/view/content/detail.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../app/view/content/detail.js"></script>
+</head>
+
+<body>
+<br>
+
+<div class="container">
+    <br>
+    <!-- Nav tabs -->
+
+    <nav class="navbar navbar-expand-sm bg-light justify-content-center">
+        <!-- Links -->
+        <ul class="nav nav-tabs justify-content-center" style="width:100%;">
+            <li class="nav-item" style="width:30%;">
+                <a href="https://fb.com/phungtienxinhdep" target="_self">
+                    <div class="w3-xlarge w3-text-black" style="font-size:30px">
+                        <i class="fa fa-home"></i>
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item" style="width:10%; text-align:center">
+                <a class="nav-link active" data-toggle="tab" href="#stream">Stream</a>
+            </li>
+            <li class="nav-item" style="width:10%;text-align:center">
+                <a class="nav-link" data-toggle="tab" href="#classwork">Classwork</a>
+            </li>
+            <li class="nav-item" style="width:10%;text-align:center">
+                <a class="nav-link" data-toggle="tab" href="#people">People</a>
+            </li>
+            <li class="nav-item" style="width:10%;text-align:center">
+                <a class="nav-link" data-toggle="tab" href="#files">Files</a>
+            </li>
+
+            <!-- Dropdown -->
+            <li class="nav-item dropdown" style="width:30%;">
+                <a class="nav-link dropdown-toggle float-right" href="#" id="navbardrop" data-toggle="dropdown">
+                    &vellip;
+                </a>
+                <div class="dropdown-menu detailmenuopen">
+                    <a class="dropdown-item detailmenuopen" href="#"> <i class='far fa-trash-alt detailmenuopenicon'></i> Xoá lớp học</a>
+                    <a class="dropdown-item detailmenuopen" href="#"> <i class='far fa-edit detailmenuopenicon'></i> Sửa thông tin lớp học</a>
+                    <a class="dropdown-item detailmenuopen" href="#"> <i class="material-icons detailmenuopenicon">exit_to_app</i> Thoát khỏi lớp học</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <!-- Streams -->
+        <div id="stream" class="container tab-pane active"><br>
+            <div class="content">
+                <ul class="list-group" style="width:900px">
+                    <li class="list-group-item newpost-detail">
+                        <div class="avt-stream content-child">
+                            <img src="../app/view/content/image/teacher.png" alt="Mai Văn Mạnh" class="avt rounded-circle" style="float:left;padding:2px;">
+                        </div>
+                        <form action="upload.php" method="post" enctype="multipart/form-data">
+                            <textarea class="topcomment" oninput="auto_grow(this)" placeholder=" Share something with your class here.."></textarea>
+                            <button type="button" class="btn btn-primary posttopdetail">Post</button>
+                        </form>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#demo" class="btn content-stream" data-toggle="collapse">
+                            <div class="content-child p-3">
+                                <div class="media-body" style="float:left;">
+                                    <div>
+                                        <h4>
+                                            <div class="avt-stream" style="float:left;">
+                                                <img src="../app/view/content/image/teacher.png" alt="Mai Văn Mạnh" class="avt rounded-circle">
+                                            </div>
+                                            <div class="status" style="float:left;">
+                                                Mai Văn Mạnh
+                                                <br>
+                                                <i style="font-size:11px">Posted on February 19, 2016
+                                                </i>
+                                            </div>
+                                        </h4>
+                                    </div>
+                                    <br><br><br><br>
+                                    <p style="text-align:left">
+                                        Thầy yêu mấy em mlem mlem mlem
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                        <div id="demo" class="collapse openstream">
+                            <!-- Noi dung cmt cua hoc sinh 1 -->
+                            <div class="statusopenstream">
+                                <div class="namecommentstream">
+                                    <div class="avt-stream content-child">
+                                        <img src="../app/view/content/image/student.png" alt="Mai Văn Mạnh" class="avt-people rounded-circle avtcommentstream">
+                                    </div>
+                                    <i>Học sinh :</i>
+                                </div>
+                                <div class="detailcommentstream">
+                                    Yêu cc
+                                </div>
+                                <div class="deletecommentstream">
+                                    <form action="upload.php" method="post" enctype="multipart/form-data">
+                                        <button type="button">
+                                            <i class='far fa-trash-alt' style='font-size:20px'></i>
+                                        </button>
+                                    </form>
+
+                                </div>
+                            </div>
+
+                            <!-- Noi dung cmt cua hoc sinh 2 -->
+                            <div class="statusopenstream">
+                                <div class="namecommentstream">
+                                    <div class="avt-stream content-child">
+                                        <img src="../app/view/content/image/student.png" alt="Mai Văn Mạnh" class="avt-people rounded-circle avtcommentstream">
+                                    </div>
+                                    <i>Binz :</i>
+                                </div>
+                                <div class="detailcommentstream">
+                                    Ờ mấy zing gút chốp em
+                                </div>
+                                <div class="deletecommentstream">
+                                    <form action="upload.php" method="post" enctype="multipart/form-data">
+                                        <button type="button">
+                                            <i class='far fa-trash-alt' style='font-size:20px'></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- Box comment va nut submit comment -->
+                            <div class="boxccommentstream">
+                                <form action="upload.php" method="post" enctype="multipart/form-data">
+                                    <textarea class="commentbox" oninput="auto_grow(this)"></textarea>
+                                    <button type="button" class="btn btn-primary postdetail">Post</button>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item" style="text-align:center">. . .</li>
+                </ul>
+            </div>
+        </div>
+        <!-- classwork -->
+        <div id="classwork" class="container tab-pane fade"><br>
+            <ul class="list-group" style="width:900px">
+
+                <li class="list-group-item newpost-detail postassignmentzone">
+                    <a href="#postassignment" class="btn postassignmentzone" data-toggle="collapse">
+                        <div class="avt-stream content-child">
+                            <img src="../app/view/content/image/teacher.png" alt="Mai Văn Mạnh" class="avt rounded-circle" style="float:left;padding:2px;">
+                        </div>
+                        <textarea class="topcomment" oninput="auto_grow(this)" placeholder=" Create assignment for your class .."></textarea>
+                        <button type="button" class="btn btn-primary posttopdetail">Post</button>
+                    </a>
+                    <div id="postassignment" class="collapse" style="padding:20px">
+                        <form action="upload.php" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="customFile" name="fileToUpload">
+                                    <label class="custom-file-label" for="customFile">Choose file</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+
+
+
+
+                <li class="list-group-item">
+                    <a href="#demo" class="btn" data-toggle="collapse">
+                        <div class="media-body" style="float:left;width:800px;">
+                            <div>
+                                <h4>
+                                    <div class="avt-stream" style="float:left;">
+                                        <img src="../app/view/content/image/teacher.png" alt="Mai Văn Mạnh" class="avt rounded-circle">
+                                    </div>
+                                    <div class="status" style="float:left;">
+                                        Mai Văn Mạnh
+                                        <br>
+                                        <i style="font-size:11px">Posted on February 19, 2016
+                                        </i>
+                                    </div>
+                                </h4>
+                            </div>
+                            <br><br><br><br>
+                            <p style="text-align:left">Nộp bài lab 2</p>
+                        </div>
+                    </a>
+                    <div id="" class="collapse" style="padding:20px">
+                        <a href="https://fb.com/phungtienxinhdep" target="_self">View assignment</a>
+                    </div>
+                </li>
+
+                <li class="list-group-item" style="text-align:center">. . .</li>
+            </ul>
+        </div>
+        <!-- People -->
+        <div id="people" class="list-member container tab-pane fade"><br>
+            <div class="list-teachers">
+                <div class="chucvu">
+                    <h4>Teachers</h4>
+                </div>
+                <div class="name-teachers">
+                    <h4 class="name-teachers">
+                        <img src="../app/view/content/image/teacher.png" alt="Mai Văn Mạnh" class="avt-people rounded-circle "> Mai Văn Mạnh
+                    </h4>
+                </div>
+            </div>
+            <br>
+            <div class="list-classmates">
+                <div class="chucvu">
+                    <div>
+                        <form action="upload.php" method="post" enctype="multipart/form-data">
+                            <button type="submit" class="btn btn-link btnaddstudentpeople">&#10009;</button>
+                        </form>
+                        <h4>Classmates</h4>
+                    </div>
+
+                </div>
+
+                <!-- Hoc sinh 1 -->
+                <div class="studentclassmates">
+                    <h6 class="namestudentclassmates">
+                        <img src="../app/view/content/image/student.png" alt="Mai Văn Mạnh" class="avt-people rounded-circle"> Học sinh dấu tên
+                        <div class="deletestudentclassmates">
+                            <form action="upload.php" method="post" enctype="multipart/form-data">
+                                <button type="button">
+                                    <i class='far fa-trash-alt deletestudentclassmatesdetail'></i>
+                                </button>
+                            </form>
+                        </div>
+                    </h6>
+                </div>
+
+                <!-- Hoc sinh 2 -->
+                <div class="studentclassmates">
+                    <h6 class="namestudentclassmates">
+                        <img src="../app/view/content/image/student.png" alt="Mai Văn Mạnh" class="avt-people rounded-circle"> Binz
+                        <div class="deletestudentclassmates">
+                            <form action="upload.php" method="post" enctype="multipart/form-data">
+                                <button type="button">
+                                    <i class='far fa-trash-alt deletestudentclassmatesdetail'></i>
+                                </button>
+                            </form>
+                        </div>
+                    </h6>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Files -->
+        <div id="files" class="container tab-pane fade"><br>
+            <div class="list-teachers">
+                <div class="chucvu">
+                    <h4>Tài liệu</h4>
+                </div>
+                <br>
+                <div class="name-teachers">
+                    <h4 class="name-teachers">
+                        Book.docs
+                    </h4>
+                </div>
+                <br>
+            </div>
+
+            <div class="list-classmates">
+                <div class="chucvu">
+                    <h4>Labs</h4>
+                </div>
+                <br>
+                <div class="name-classmates">
+                    <h4 class="name-classmates">
+                        Lab1.rar
+                    </h4>
+                </div>
+            </div>
+            <br>
+            <div class="list-classmates">
+                <div class="chucvu">
+                    <h4>Slides</h4>
+                </div>
+                <br>
+                <div class="name-classmates">
+                    <h4 class="name-classmates">
+                        Lab1.ppt
+                    </h4>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 </body>
+
 </html>

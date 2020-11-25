@@ -60,9 +60,11 @@
         }
 
         public function detail(){
+            $error = '';
             if(isset($_POST['joinintoclass'])){
                 echo $_POST['currentcode'];
             }
+            $this->render('detail.html');
             
         }
 
