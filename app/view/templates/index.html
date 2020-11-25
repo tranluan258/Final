@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./app/view/content/all.css">
+    <link rel="stylesheet" type="text/css" href="./app/view/content/code.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -119,17 +120,24 @@
     <div class="row justify-content-center">
        {% for i in subject.data %}
         <div class="col-md-3 col-sm-6 col-xs-12 row-container">
-            <a href="detail/get?code={{ i.code }}">
+            <form action="subject/detail" method="post">
                 <div class="subject_homepage">
                     <div class="textsubject_homepage">
-                        <p>{{ i.classname }}</p>
-                        <p>{{ i.subjectname }}</p>
-                        <p>{{ i.teachername }}</p>
-                        <p>{{ i.room }}</p>
+                        <input class="currentcode" name="currentcode" id="currentcode" value="{{ i.code }}">
+                        <p>Tên lớp: {{ i.classname }}</p>
+                        <p>Môn học: {{ i.subjectname }}</p>
+                        <p>Giáo viên: {{ i.teachername }}</p>
+                        <p>Phòng học: {{ i.room }}</p>
                     </div>
-                    <img src="./app/view/content/image/subject.jpg" class="rounded" alt="Cinque Terre">
+                    <p> </p><br>
+                    <p> </p><br>
+                    <p> </p><br>
+                    <div class="btn_join_into_class">
+                        <button type="submit" class="btn btn-primary" name="joinintoclass" id="joinintoclass">Join Class</button>
+                    </div>
+
                 </div>
-            </a>
+            </form>
         </div>
         {% endfor %}
     </div>

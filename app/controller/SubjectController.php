@@ -1,8 +1,6 @@
 <?php
     class SubjectController extends BaseController{
-        public function detail(){
-            $this->render('detail.html');
-        }
+
         public function add_student(){
 
         }
@@ -59,6 +57,13 @@
                 $_SESSION['error'] = $error;
                 header("Location: ../");
             }
+        }
+
+        public function detail(){
+            if(isset($_POST['joinintoclass'])){
+                echo $_POST['currentcode'];
+            }
+            
         }
 
     }
