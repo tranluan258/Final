@@ -201,7 +201,12 @@
         }
 
         public function profile($username){
-            
+            $sql = 'select * from account where username = ?';
+            $param = array('s',&$username);
+
+            $data = $this->query_one_select($sql,$param);
+
+            return $data['data'];
         }
     }
 ?>

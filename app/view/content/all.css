@@ -502,3 +502,133 @@ img {
     background-color: #ff1d68;
 }
 
+
+/*profile*/
+.body_profile{
+    background-color: #ff1d68;
+}
+.title_profile_brand{
+    font-weight: bold;
+
+}
+
+.name_profile{
+    float: right;
+    padding-left: 20px;
+    font-size: 20px;
+    width: 80%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.title_profile{
+    font-weight: bold;
+    font-size: 45px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.label_profile{
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 70%;
+}
+.form_name_profile{
+    display: flex;
+    flex-direction: row;
+}
+.form_profile{
+    padding: 10px;
+    line-height: 80px;
+    width: 100%;
+}
+.row-container_profile{
+    border: 1px solid rgb(156, 150, 150);
+    margin: 5%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 70px 70px;
+    -webkit-box-shadow: 0px 1px 22px 5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 1px 22px 5px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 1px 22px 5px rgba(0, 0, 0, 0.75);
+}
+
+
+.button-cancle_profile_changepassword{
+    width: 100%;
+    font-weight: bold;
+    border-radius: 20px;
+}
+.button_changepassword_inprofile{
+    width: 100%;
+    font-weight: bold;
+    border-color: none;
+    background-color:#00a2ff;
+    border-radius: 20px;
+    border-color: #00a2ff;
+
+}
+.button_changepassword_inprofile:hover{
+    background-color:#ff1d68;
+    border-color: #ff1d68;
+
+}
+.button_change_inprofile{
+    text-align: right;
+}
+.label_password_changepassword_inprofile{
+    margin: 10px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+}
+.label_newpassword_changepassword_inprofile{
+    margin: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.label_confirm_newpassword_changepassword_inprofile{
+    margin: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.box_email_update_profile{
+    border-radius: 20px;
+}
+.box_name_update_profile{
+    border-radius: 20px;
+}
+.box_birthday_update_profile{
+    border-radius: 20px;
+}
+.box_phone_update_profile{
+    border-radius: 20px;
+}
+.label_email_update_profile{
+    margin: 10px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.label_name_update_profile{
+    margin: 10px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.label_birthday_update_profile{
+    margin: 10px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.label_phone_update_profile{
+    margin: 10px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.text_note1_updateprofile{
+    font-weight: bold;
+}
+.text_note1_changepassword_inprofile{
+    font-weight: bold;
+}

@@ -166,5 +166,11 @@
             }
             $this->render('forgot.html', array("error" => $error));
         }
+
+        public function profile(){
+            $account = new AccountModel();
+            $data = $account->profile($_SESSION['username']);
+            $this->render('profile.html',array('data'=>$data));
+        }
     }
 ?>

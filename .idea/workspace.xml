@@ -11,15 +11,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37019a64-43c3-4573-98e9-aef5311ad553" name="Default Changelist" comment="test">
-      <change afterPath="$PROJECT_DIR$/app/view/content/all.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/view/account/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controller/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/AccountController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/templates/forgot.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/templates/forgot.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/AccountModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/AccountModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/content/all.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/content/all.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/view/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/templates/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +31,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -95,7 +92,7 @@
       <workItem from="1606285084270" duration="2502000" />
       <workItem from="1606287603731" duration="924000" />
       <workItem from="1606288983465" duration="51000" />
-      <workItem from="1606289716379" duration="169000" />
+      <workItem from="1606289716379" duration="2308000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1606289379352</created>
@@ -104,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606289379352</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="test">
+      <created>1606289941202</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606289941202</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,6 +125,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="WindowStateProjectService">
     <state x="574" y="114" key="#com.intellij.ide.util.MemberChooser" timestamp="1606286233521">
@@ -139,10 +147,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="277" y="77" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1606234925272" />
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1606289380499">
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1606289943972">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1606289380499" />
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1606289943972" />
     <state x="586" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606289663493">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
