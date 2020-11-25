@@ -1,0 +1,90 @@
+.titleview{
+    font-weight: bold;
+    font-size: 50px;
+    width: 92%;
+}
+.row-account{
+    margin: 10px;
+    border: solid 1px #c5bdbd;
+    background-color: #c5bdbd;
+
+}
+.modal_header{
+    width: 100%;
+}
+.out_view{
+    font-size: 40px;
+    color: black;
+    text-align: end;
+}
+.home_view{
+    font-size: 40px;
+    color: black;
+    text-align: end;
+}
+.text_account_box{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.label_text_account_box{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 10px;
+}
+.name_pq{
+    float: right;
+    color: black;
+    width: 25%;
+}
+.username_pq{
+    float: right;
+    color: black;
+    width: 25%;
+}
+.type_pq{
+    float: right;
+    color: black;
+    width: 25%;
+}
+.label_name_pq{
+    float: right;
+    color: black;
+    width: 25%;
+    font-weight: bold;
+}
+.label_username_pq{
+    float: right;
+    color: black;
+    width: 25%;
+    font-weight: bold;
+}
+.label_type_pq{
+    float: right;
+    color: black;
+    width: 25%;
+    font-weight: bold;
+}
+.label_settype_pq{
+    float: right;
+    color: black;
+    width: 25%;
+    font-weight: bold;
+}
+.button_set_gv{
+    width: 7.5%;
+    font-weight: bold;
+    background-color: #009b08;
+}
+.button_set_gv:hover{
+    background-color: #ff2525;
+}
+.button_set_sv{
+    width: 7.5%;
+    font-weight: bold;
+    background-color: #00c7bd;
+}
+.button_set_sv:hover{
+    background-color: #ff2525;
+}

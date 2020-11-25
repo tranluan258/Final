@@ -172,5 +172,9 @@
             $data = $account->profile($_SESSION['username']);
             $this->render('profile.html',array('data'=>$data));
         }
+
+        public function  view_account(){
+            $this->render("view_account.html");
+        }
     }
 ?>

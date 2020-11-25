@@ -11,6 +11,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>Home page</title>
     <script src="./app/view/content/main.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 </head>
 <body class = "body_homepage">
 
@@ -40,7 +41,7 @@
         {% if type == 0 %}
         <ul class="nav navbar-nav navbar-right " class="joinclass">
             <li class="nav-item">
-                <a class="nav-link" href="#" id ="myBtn">Join</a>
+                <a class="nav-link" href="#" id ="myBtn"><i class="fa fa-plus-circle" aria-hidden="true"></i>  Join</a>
                 <!-- The Modal -->
                 <div class="modal fade" id="myModal">
                     <div class="modal-dialog">
@@ -101,11 +102,22 @@
                 </div>
             </li>
         </ul>
+        <ul class="nav navbar-nav navbar-right ">
+            <li class="nav-item">
+                <a class="nav-link" class="phanquyen" id="phanquyen" href="account/view_account"><i class="fa fa-users" aria-hidden="true"></i>  View</a>
+            </li>
+        </ul>
         {% endif %}
-
+        {% if type == 2 %}
+        <ul class="nav navbar-nav navbar-right ">
+            <li class="nav-item">
+                <a class="nav-link" class="phanquyen" id="phanquyen" href="account/view_account"><i class="fa fa-users" aria-hidden="true"></i>  View</a>
+            </li>
+        </ul>
+        {% endif %}
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="account/logout"> Log out</a>
+                <a class="nav-link" href="account/logout"><i class="fa fa-sign-out" aria-hidden="true"></i>  Log out</a>
             </li>
         </ul>
     </div>
