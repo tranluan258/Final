@@ -95,15 +95,41 @@
                 $result = $subject->view_notice($_POST['currentcode']);
                 $_SESSION['currentcode'] = $_POST['currentcode'];
             }
+            $datacmt = array();
+            foreach ($result as &$notice){
+                foreach ($notice as &$value){
+                    $currentnotice = $value['idnotice'];
+                    $cmt = $subject->view_comment_highlight($value['idnotice']);
+                    array_push($datacmt,array($currentnotice=>$cmt));
+                }
+            }
 
             if (isset($_SESSION['error'])) {
                 $error = $_SESSION['error'];
                 unset($_SESSION['error']);
             }
-
-            $data = array("errordetail" => $error, 'type' => $_SESSION['type'], 'notice' => $result);
+            print_r($result);
+            print_r($datacmt);
+            $data = array("errordetail" => $error, 'type' => $_SESSION['type'], 'notice' => $result, 'noticecmt'=>$datacmt);
 
             $this->render('detail.html', $data);
+        }
+
+        public function notice(){
+            $subject = new SubjectModel();
+            if(isset($_POST['viewnotice'])){
+                unset($_SESSION['currentnotice']);
+            }
+            if (isset($_SESSION['currentnotice'])) {
+                $result = $subject->view_comment($_SESSION['currentnotice']);
+            }else{
+                $result = $subject->view_comment($_POST['currentnotice']);
+                $_SESSION['currentnotice'] = $_POST['currentnotice'];
+            }
+
+            $data = array('type' => $_SESSION['type'], 'comment' => $result);
+            print_r($data);
+            $this->render('notice.html', $data);
         }
     }
 ?>

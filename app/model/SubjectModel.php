@@ -65,6 +65,41 @@
             }
         }
 
+        public function view_comment_highlight($idnotice){
+            $sql = "select id, username, comment from notice_comment where idnotice = ?";
+            $params = array('i',&$idnotice);
+            $dataNotice = $this->query_prepare_select($sql,$params);
+            if($dataNotice['code'] == 1){
+                $error = 'Lỗi';
+            }else{
+                $data = array();
+                $count = 0;
+                while ($item = $dataNotice['data']->fetch_assoc()){
+                    if($count<3){
+                        array_push($data,array('idcmt'=>$item['id'],'username'=>$item['username'],'comment'=>$item['comment']));
+                        $count++;
+                    }
+
+                }
+                return array('data'=>$data);
+            }
+        }
+
+        public function view_comment($idnotice){
+            $sql = "select id, username, comment from notice_comment where idnotice = ?";
+            $params = array('i',&$idnotice);
+            $dataNotice = $this->query_prepare_select($sql,$params);
+            if($dataNotice['code'] == 1){
+                $error = 'Lỗi';
+            }else{
+                $data = array();
+                while ($item = $dataNotice['data']->fetch_assoc()){
+                    array_push($data,array('idcmt'=>$item['id'],'username'=>$item['username'],'comment'=>$item['comment']));
+                }
+                return array('data'=>$data);
+            }
+        }
+
         public function add_notice($code,$username,$information){
             $sql = "insert into notice(class,username,information) values (?,?,?)";
             $params = array('sss',&$code,&$username,&$information);

@@ -68,6 +68,7 @@
         </ul>
     </nav>
 
+
     <!-- Tab panes -->
     <div class="tab-content">
         <!-- Streams -->
@@ -85,7 +86,7 @@
                     </li>
                     <li class="list-group-item">
                         {% for i in notice.data %}
-                        <a href="#{{i.username}}{{ i.idnotice }}" class="btn content-stream" data-toggle="collapse">
+                        <a href="#{{ i.username }}{{ i.idnotice }}" class="btn content-stream" data-toggle="collapse">
                             <div class="content-child p-3">
                                 <div class="media-body" style="float:left;">
                                     <div>
@@ -108,53 +109,30 @@
                                 </div>
                             </div>
                         </a>
-                        <div id="{{i.username}}{{ i.idnotice }}" class="collapse openstream">
+                        <div id="{{ i.username }}{{ i.idnotice }}" class="collapse openstream">
                             <!-- Noi dung cmt cua hoc sinh 1 -->
+                            {% for z in noticecmt %}
+                            {% for j in z[i.idnotice].data %}
                             <div class="statusopenstream">
                                 <div class="namecommentstream">
                                     <div class="avt-stream content-child">
                                         <img src="../app/view/content/image/student.png" alt="Mai Văn Mạnh" class="avt-people rounded-circle avtcommentstream">
                                     </div>
-                                    <i>Học sinh :</i>
+                                    <i>{{ j.username }} :</i>
                                 </div>
                                 <div class="detailcommentstream">
-                                    Yêu cc
-                                </div>
-                                <div class="deletecommentstream">
-                                    <form action="upload.php" method="post" enctype="multipart/form-data">
-                                        <button type="button">
-                                            <i class='far fa-trash-alt' style='font-size:20px'></i>
-                                        </button>
-                                    </form>
-
+                                        {{ j.comment }}
                                 </div>
                             </div>
-
-                            <!-- Noi dung cmt cua hoc sinh 2 -->
-                            <div class="statusopenstream">
-                                <div class="namecommentstream">
-                                    <div class="avt-stream content-child">
-                                        <img src="../app/view/content/image/student.png" alt="Mai Văn Mạnh" class="avt-people rounded-circle avtcommentstream">
-                                    </div>
-                                    <i>Binz :</i>
-                                </div>
-                                <div class="detailcommentstream">
-                                    Ờ mấy zing gút chốp em
-                                </div>
-                                <div class="deletecommentstream">
-                                    <form action="upload.php" method="post" enctype="multipart/form-data">
-                                        <button type="button">
-                                            <i class='far fa-trash-alt' style='font-size:20px'></i>
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-                            <!-- Box comment va nut submit comment -->
-                            <div class="boxccommentstream">
-                                <form action="upload.php" method="post" enctype="multipart/form-data">
-                                    <textarea class="commentbox" oninput="auto_grow(this)"></textarea>
-                                    <button type="button" class="btn btn-primary postdetail">Post</button>
+                            {% endfor %}
+                            {% endfor %}
+                            <div class="deletecommentstream">
+                                <form action="notice" method="post" enctype="multipart/form-data">
+                                    <input name="currentnotice" value="{{ i.idnotice }}">
+                                    <button type="submit" class="btn btn-primary" name="viewnotice" id="viewnotice">
+                                        <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>  View notice</button>
                                 </form>
+
                             </div>
                         </div>
                         {% endfor %}
