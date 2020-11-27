@@ -213,7 +213,17 @@
         }
 
         public function update_type($username){
-            $sql = 'update account set type = 1 where username = ?';
+            $type_new = 0;
+            $sql = 'select type from account where username = ?';
+            $param = array('s',&$username);
+            $user = $this->query_one_select($sql,$param);
+            $type = $user['data']['type'];
+            if($type == 1){
+                $type_new = 0;
+            }else{
+                $type_new = 1;
+            }
+            $sql = "update account set type = $type_new where username = ?";
             $param = array('s',&$username);
             $data = $this->query_prepare_update($sql,$param);
 
