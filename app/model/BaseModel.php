@@ -87,6 +87,17 @@
 
             return array('code'=>0,'error'=>"Thành công");
         }
+
+        public function query_prepare_delete($sql,$param){
+            $stm = $this->db->prepare($sql);
+            call_user_func_array(array($stm,'bind_param'),$param);
+
+            if(!$stm->execute()){
+                return array('code'=>1,'error'=>$this->db->error);
+            }
+
+            return array('code'=>0,'error'=>"Thành công");
+        }
     }
 
 ?>

@@ -59,7 +59,7 @@
                         }
                     }
                     $_SESSION['error'] = $error;
-                    header("Location: http://localhost:8080/Final/subject/detail");
+                    header("Location: detail");
                 }
             }
         }
@@ -80,6 +80,22 @@
             }
         }
 
+        public function leave_class(){
+            $error = '';
+            $code = $_SESSION['currentcode'];
+            $student = $_SESSION['username'];
+            if(isset($_POST['leaveclass'])){
+                $subject = new SubjectModel();
+                $data = $subject->leaveclass($code,$student);
+                if($data['code'] == 1){
+                    $error = "Rời lớp học thất bại!";
+                } else {
+                    $error = "Rời lớp học thành công!";
+                }
+                $_SESSION['error'] = $error;
+                header("Location: ../");
+            }
+        }
 
         public function detail()
         {
@@ -108,8 +124,6 @@
                 $error = $_SESSION['error'];
                 unset($_SESSION['error']);
             }
-            print_r($result);
-            print_r($datacmt);
             $data = array("errordetail" => $error, 'type' => $_SESSION['type'], 'notice' => $result, 'noticecmt'=>$datacmt);
 
             $this->render('detail.html', $data);

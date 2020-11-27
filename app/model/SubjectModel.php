@@ -112,5 +112,18 @@
                 return array('code'=>0, 'message'=>'Đăng thông báo thành công!');
             }
         }
+
+        public function leaveclass($code,$student){
+            $sql = "DELETE FROM `subject_info` WHERE code = ? and student = ?";
+            $params = array('ss',&$code,&$student);
+
+            $data = $this->query_prepare_delete($sql,$params);
+
+            if($data['code']==1){
+                return array('code'=>1, 'message'=>'Rời lớp học thất bại!');
+            }else{
+                return array('code'=>0, 'message'=>'Rời lớp học thành công!');
+            }
+        }
     }
 ?>

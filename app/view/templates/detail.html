@@ -61,7 +61,10 @@
                     <a class="dropdown-item detailmenuopen" href="#"> <i class='far fa-trash-alt detailmenuopenicon'></i> Xoá lớp học</a>
                     <a class="dropdown-item detailmenuopen" href="#"> <i class='far fa-edit detailmenuopenicon'></i> Sửa thông tin lớp học</a>
                     {% elseif type == 0 %}
-                    <a class="dropdown-item detailmenuopen" href="#"> <i class="material-icons detailmenuopenicon">exit_to_app</i> Thoát khỏi lớp học</a>
+                    <form method="post" action="leave_class">
+                        <button type="submit" name="leaveclass" class="dropdown-item detailmenuopen" href=""> <i class="material-icons detailmenuopenicon">exit_to_app</i> Thoát khỏi lớp học</button>
+                    </form>
+
                     {% endif %}
                 </div>
             </li>
