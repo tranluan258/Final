@@ -15,7 +15,7 @@ function suggest(str) {
                         "                <form action=\"subject/detail\" method=\"post\">\n" +
                         "                    <div class=\"subject_homepage\">\n" +
                         "                        <div class=\"textsubject_homepage\">\n" +
-                        "                            <input class=\"currentcode\" name=\"currentcode\" id=\"currentcode\" value=\"\">\n" +
+                        "                            <input class=\"currentcode\" name=\"currentcode\" id=\"currentcode\" value=\""+array[i]['code']+"\">\n" +
                         "                            <p>Tên lớp:"+array[i]['classname']+"</p>\n" +
                         "                            <p>Môn học:"+array[i]['subjectname']+" </p>\n" +
                         "                            <p>Giáo viên:"+array[i]['teachername']+" </p>\n" +
