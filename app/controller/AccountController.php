@@ -112,7 +112,6 @@
                             $error = "Đăng kí thành công";
                         }
                     }
-
                     $this->render('signup.html',array("error"=>$error));
                 }
             }else{
@@ -181,6 +180,44 @@
            }
            $data = $account->get_all();
            $this->render('view_account.html',array('data'=>$data));
+        }
+
+        public function change_password(){
+            if(isset($_POST['button_change_pass'])){
+                $error = '';
+                $pass = '';
+                $new_pass = '';
+                $conform_new_pass = '';
+
+                if (isset($_POST['password']) && isset($_POST['new_pass']) && isset($_POST['confirm_new_pass'])) {
+                    $pass = $_POST['password'];
+                    $new_pass = $_POST['new_pass'];
+                    $conform_new_pass = $_POST['confirm_new_pass'];
+                    if (empty($new_pass)) {
+                        $error = 'Vui lòng nhập mật khẩu mới';
+                    } else if (empty($pass)) {
+                        $error = 'Vui lòng nhập password';
+                    } else if (strlen($new_pass) < 6) {
+                        $error = 'Password ít nhất 6 kí tự';
+                    }else if($new_pass != $conform_new_pass){
+                        $error = 'Password không khớp';
+                    }
+                    else {
+                        $account = new AccountModel();
+                        $data = $account->login($_SESSION['username'],$pass);
+                        if($data == null){
+                            $error = 'Password không đúng';
+                        }else{
+                            $data = $account->update_pass($_SESSION['username'],$pass);
+                            $error = "Đổi mật khẩu thành công";
+                        }
+                    }
+                    $this->render('change_password.html',array('error'=>$error));
+                }
+            }else{
+                $this->render('change_password.html');
+            }
+
         }
     }
 ?>

@@ -219,5 +219,14 @@
 
             return $data['code'];
         }
+
+        public function update_pass($username,$pass){
+            $hash = password_hash($pass,PASSWORD_DEFAULT);
+            $sql = "update account set password = '$hash' where username = ?";
+            $param = array('s',&$username);
+            $data = $this->query_prepare_update($sql,$param);
+
+            return $data['code'];
+        }
     }
 ?>
