@@ -100,6 +100,36 @@
             }
         }
 
+        public function view_people_teacher($code){
+            $sql = "select subject.teacher, account.yourname, account.email from subject,account where subject.teacher = account.username and code = ?";
+            $params = array('s',&$code);
+            $dataTeacher = $this->query_prepare_select($sql,$params);
+            if($dataTeacher['code'] == 1){
+                $error = 'Lỗi';
+            }else{
+                $data = array();
+                while ($item = $dataTeacher['data']->fetch_assoc()){
+                    array_push($data,array('teacher'=>$item['teacher'],'name'=>$item['yourname'],'email'=>$item['email']));
+                }
+                return array('data'=>$data);
+            }
+        }
+
+        public function view_people_student($code){
+            $sql = "select subject_info.student, account.yourname, account.email from subject_info,account where subject_info.student = account.username and code = ?";
+            $params = array('s',&$code);
+            $dataStudent = $this->query_prepare_select($sql,$params);
+            if($dataStudent['code'] == 1){
+                $error = 'Lỗi';
+            }else{
+                $data = array();
+                while ($item = $dataStudent['data']->fetch_assoc()){
+                    array_push($data,array('student'=>$item['student'],'name'=>$item['yourname'],'email'=>$item['email']));
+                }
+                return array('data'=>$data);
+            }
+        }
+
         public function add_notice($code,$username,$information){
             $sql = "insert into notice(class,username,information) values (?,?,?)";
             $params = array('sss',&$code,&$username,&$information);
@@ -113,7 +143,7 @@
             }
         }
 
-        public function leaveclass($code,$student){
+        public function leave_class($code,$student){
             $sql = "DELETE FROM `subject_info` WHERE code = ? and student = ?";
             $params = array('ss',&$code,&$student);
 
@@ -125,5 +155,6 @@
                 return array('code'=>0, 'message'=>'Rời lớp học thành công!');
             }
         }
+
     }
 ?>

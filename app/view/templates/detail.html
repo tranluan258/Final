@@ -205,52 +205,46 @@
                 <div class="chucvu">
                     <h4>Teachers</h4>
                 </div>
+                {% for i in teacher.data %}
                 <div class="name-teachers">
                     <h4 class="name-teachers">
-                        <img src="../app/view/content/image/teacher.png" alt="Mai Văn Mạnh" class="avt-people rounded-circle "> Mai Văn Mạnh
+                        <img src="../app/view/content/image/teacher.png" alt="Mai Văn Mạnh" class="avt-people rounded-circle "> {{ i.name }}
                     </h4>
                 </div>
+                {% endfor %}
             </div>
             <br>
             <div class="list-classmates">
                 <div class="chucvu">
                     <div>
+                        {% if type == 1 %}
                         <form action="upload.php" method="post" enctype="multipart/form-data">
                             <button type="submit" class="btn btn-link btnaddstudentpeople">&#10009;</button>
                         </form>
+                        {% endif %}
                         <h4>Classmates</h4>
                     </div>
 
                 </div>
 
                 <!-- Hoc sinh 1 -->
+                {% for i in student.data %}
                 <div class="studentclassmates">
                     <h6 class="namestudentclassmates">
-                        <img src="../app/view/content/image/student.png" alt="Mai Văn Mạnh" class="avt-people rounded-circle"> Học sinh dấu tên
+                        <img src="../app/view/content/image/student.png" alt="Mai Văn Mạnh" class="avt-people rounded-circle">{{ i.name }}
+                        {% if type == 1 %}
                         <div class="deletestudentclassmates">
-                            <form action="upload.php" method="post" enctype="multipart/form-data">
-                                <button type="button">
+                            <form action="delete_student" method="post" enctype="multipart/form-data">
+                                <input class="currentstudentdelete" name="currentstudentdelete" id="currentstudentdelete" value="{{ i.student }}">
+                                <button type="submit" name="deletestudent">
                                     <i class='far fa-trash-alt deletestudentclassmatesdetail'></i>
                                 </button>
                             </form>
                         </div>
+                        {% endif %}
                     </h6>
                 </div>
-
-                <!-- Hoc sinh 2 -->
-                <div class="studentclassmates">
-                    <h6 class="namestudentclassmates">
-                        <img src="../app/view/content/image/student.png" alt="Mai Văn Mạnh" class="avt-people rounded-circle"> Binz
-                        <div class="deletestudentclassmates">
-                            <form action="upload.php" method="post" enctype="multipart/form-data">
-                                <button type="button">
-                                    <i class='far fa-trash-alt deletestudentclassmatesdetail'></i>
-                                </button>
-                            </form>
-                        </div>
-                    </h6>
-                </div>
-
+                {% endfor %}
             </div>
 
         </div>

@@ -86,7 +86,7 @@
             $student = $_SESSION['username'];
             if(isset($_POST['leaveclass'])){
                 $subject = new SubjectModel();
-                $data = $subject->leaveclass($code,$student);
+                $data = $subject->leave_class($code,$student);
                 if($data['code'] == 1){
                     $error = "Rời lớp học thất bại!";
                 } else {
@@ -94,6 +94,23 @@
                 }
                 $_SESSION['error'] = $error;
                 header("Location: ../");
+            }
+        }
+
+        public function delete_student(){
+            $error = '';
+            $code = $_SESSION['currentcode'];
+            if(isset($_POST['deletestudent'])){
+                $student = $_POST['currentstudentdelete'];
+                $subject = new SubjectModel();
+                $data = $subject->leave_class($code,$student);
+                if($data['code'] == 1){
+                    $error = "Xóa học sinh khỏi lớp thất bại!";
+                } else {
+                    $error = "Xóa học sinh khỏi lớp thành công!";
+                }
+                $_SESSION['error'] = $error;
+                header("Location: detail");
             }
         }
 
@@ -106,25 +123,30 @@
                 unset($_SESSION['currentcode']);
             }
             if (isset($_SESSION['currentcode'])) {
-                $result = $subject->view_notice($_SESSION['currentcode']);
+                $notice = $subject->view_notice($_SESSION['currentcode']);
+                $teacher = $subject->view_people_teacher($_SESSION['currentcode']);
+                $student = $subject->view_people_student($_SESSION['currentcode']);
             }else{
-                $result = $subject->view_notice($_POST['currentcode']);
+                $notice = $subject->view_notice($_POST['currentcode']);
+                $teacher = $subject->view_people_teacher($_POST['currentcode']);
+                $student = $subject->view_people_student($_POST['currentcode']);
                 $_SESSION['currentcode'] = $_POST['currentcode'];
             }
             $datacmt = array();
-            foreach ($result as &$notice){
-                foreach ($notice as &$value){
+            foreach ($notice as &$noticecmt){
+                foreach ($noticecmt as &$value){
                     $currentnotice = $value['idnotice'];
                     $cmt = $subject->view_comment_highlight($value['idnotice']);
                     array_push($datacmt,array($currentnotice=>$cmt));
                 }
             }
 
+
             if (isset($_SESSION['error'])) {
                 $error = $_SESSION['error'];
                 unset($_SESSION['error']);
             }
-            $data = array("errordetail" => $error, 'type' => $_SESSION['type'], 'notice' => $result, 'noticecmt'=>$datacmt);
+            $data = array("errordetail" => $error, 'type' => $_SESSION['type'], 'notice' => $notice, 'noticecmt'=>$datacmt, 'teacher'=>$teacher, 'student'=>$student);
 
             $this->render('detail.html', $data);
         }
@@ -145,5 +167,6 @@
             print_r($data);
             $this->render('notice.html', $data);
         }
+
     }
 ?>
