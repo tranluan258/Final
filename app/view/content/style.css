@@ -401,6 +401,7 @@ input[type="email"]:focus {
     height: 100%;
 }
 
+
 img {
     width: 100%;
     height: 220px;
@@ -409,6 +410,7 @@ img {
 .subject_homepage {
     border-radius: 10px 10px 10px 10px;
     background-color: #c7c7c7;
+    background-image: url("image/bgSubject.jpg");
     margin-top: 15px;
 }
 
@@ -421,6 +423,8 @@ img {
     padding: 2%;
     font-family: Arial, Helvetica, sans-serif;
     color: #000000;
+    background-color: aquamarine;
+    border-radius: 10px;
 
 }
 .subject_homepage:hover {
@@ -502,3 +506,307 @@ img {
     background-color: #ff1d68;
 }
 
+
+/*profile*/
+.body_profile{
+    background-color: #7befb2;
+}
+.title_profile_brand{
+    font-weight: bold;
+
+}
+
+.name_profile{
+    float: right;
+    padding-left: 20px;
+    font-size: 20px;
+    width: 80%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.title_profile{
+    font-weight: bold;
+    font-size: 45px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.label_profile{
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 70%;
+}
+.form_name_profile{
+    display: flex;
+    flex-direction: row;
+}
+.form_profile{
+    padding: 10px;
+    line-height: 80px;
+    width: 100%;
+}
+.row-container_profile{
+    border: 1px solid rgb(156, 150, 150);
+    margin: 5%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 70px 70px;
+    -webkit-box-shadow: 0px 1px 22px 5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 1px 22px 5px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 1px 22px 5px rgba(0, 0, 0, 0.75);
+}
+
+
+.button-cancle_profile_changepassword{
+    width: 100%;
+    font-weight: bold;
+    border-radius: 20px;
+}
+.button_changepassword_inprofile{
+    width: 100%;
+    font-weight: bold;
+    border-color: none;
+    background-color:#00a2ff;
+    border-radius: 20px;
+    border-color: #00a2ff;
+
+}
+.button_changepassword_inprofile:hover{
+    background-color:#ff1d68;
+    border-color: #ff1d68;
+
+}
+.button_change_inprofile{
+    text-align: right;
+}
+.label_password_changepassword_inprofile{
+    margin: 10px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+}
+.label_newpassword_changepassword_inprofile{
+    margin: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.label_confirm_newpassword_changepassword_inprofile{
+    margin: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.box_email_update_profile{
+    border-radius: 20px;
+}
+.box_name_update_profile{
+    border-radius: 20px;
+}
+.box_birthday_update_profile{
+    border-radius: 20px;
+}
+.box_phone_update_profile{
+    border-radius: 20px;
+}
+.label_email_update_profile{
+    margin: 10px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.label_name_update_profile{
+    margin: 10px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.label_birthday_update_profile{
+    margin: 10px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.label_phone_update_profile{
+    margin: 10px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.text_note1_updateprofile{
+    font-weight: bold;
+}
+.text_note1_changepassword_inprofile{
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+.row-container_changepassword_inprofile {
+    margin: 5%;
+    padding: 30px;
+}
+.text_note1_changepassword_inprofile{
+    text-align: center;
+}
+.button_changepassword_inprofile{
+    width: 35%;
+    margin-top: 20px;
+    font-weight: bold;
+    border-color: none;
+    background-color: rgb(26, 72, 224);
+    border-radius: 50px;
+
+}
+.button_change_inprofile{
+    text-align: right;
+}
+.label_password_changepassword_inprofile{
+    margin: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+.label_newpassword_changepassword_inprofile{
+    margin: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+.label_confirm_newpassword_changepassword_inprofile{
+    margin: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.currentcode{
+    display: none;
+}
+.btn_join_into_class{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.box_search{
+    border-radius: 10px;
+}
+
+.box_search:focus{
+    outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.titleview{
+    font-weight: bold;
+    font-size: 50px;
+    width: 92%;
+}
+.row-account{
+    margin: 10px;
+    border: solid 1px #c5bdbd;
+    background-color: #c5bdbd;
+
+}
+.modal_header{
+    width: 100%;
+}
+.out_view{
+    font-size: 40px;
+    color: black;
+    text-align: end;
+}
+.home_view{
+    font-size: 40px;
+    color: black;
+    text-align: end;
+}
+.text_account_box{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.label_text_account_box{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 10px;
+}
+.name_pq{
+    float: right;
+    color: black;
+    width: 25%;
+}
+.username_pq{
+    float: right;
+    color: black;
+    width: 25%;
+}
+.type_pq{
+    float: right;
+    color: black;
+    width: 25%;
+}
+.label_name_pq{
+    float: right;
+    color: black;
+    width: 25%;
+    font-weight: bold;
+}
+.label_username_pq{
+    float: right;
+    color: black;
+    width: 25%;
+    font-weight: bold;
+}
+.label_type_pq{
+    float: right;
+    color: black;
+    width: 25%;
+    font-weight: bold;
+}
+.label_settype_pq{
+    float: right;
+    color: black;
+    width: 25%;
+    font-weight: bold;
+}
+.button_set_gv{
+    width: 7.5%;
+    font-weight: bold;
+    background-color: #009b08;
+}
+.button_set_gv:hover{
+    background-color: #ff2525;
+}
+.button_set_sv{
+    width: 7.5%;
+    font-weight: bold;
+    background-color: #00c7bd;
+}
+.button_set_sv:hover{
+    background-color: #ff2525;
+}

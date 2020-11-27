@@ -229,3 +229,7 @@
 .currentnotice{
     display: none;
 }
+
+.currentstudentdelete{
+    display: none;
+}

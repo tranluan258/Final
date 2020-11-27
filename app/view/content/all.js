@@ -1,3 +1,15 @@
+$(document).ready(()=>{
+    $("#myBtn").click(() =>{
+        $("#myModal").modal();
+    });
+});
+
+$(document).ready(()=>{
+    $("#myBtnaddnewclass").click(() =>{
+        $("#myModaladdnewclass").modal();
+    });
+});
+
 function suggest(str) {
     if (str.length == 0) {
         $(".list-subject").show();
@@ -40,4 +52,9 @@ function suggest(str) {
         xmlhttp.open("POST", "home/search?q=" + str, true);
         xmlhttp.send();
     }
+}
+
+function auto_grow(element) {
+    element.style.height = "5px";
+    element.style.height = (element.scrollHeight) + "px";
 }
