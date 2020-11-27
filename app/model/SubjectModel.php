@@ -50,7 +50,7 @@
         }
 
         public function view_notice($code){
-            $sql = "select id,username,information,datepost from notice where class = ?";
+            $sql = "select notice.id, notice.username, notice.information, notice.datepost, account.yourname, account.type from notice,account where notice.username = account.username and class = ?";
             $params = array('s',&$code);
             $dataSubject = $this->query_prepare_select($sql,$params);
             if($dataSubject['code'] == 1){
@@ -59,14 +59,14 @@
                 $data = array();
 
                 while ($item = $dataSubject['data']->fetch_assoc()){
-                    array_push($data,array('idnotice'=>$item['id'],'username'=>$item['username'],'information'=>$item['information'],'datepost'=>$item['datepost']));
+                    array_push($data,array('idnotice'=>$item['id'],'username'=>$item['username'],'information'=>$item['information'],'datepost'=>$item['datepost'],'name'=>$item['yourname'],'type'=>$item['type']));
                 }
                 return array('data'=>$data);
             }
         }
 
         public function view_comment_highlight_notice($idnotice){
-            $sql = "select id, username, comment from notice_comment where idnotice = ?";
+            $sql = "select notice_comment.id, notice_comment.username, notice_comment.comment, account.yourname, account.type from notice_comment, account where notice_comment.username = account.username and idnotice = ?";
             $params = array('i',&$idnotice);
             $dataNotice = $this->query_prepare_select($sql,$params);
             if($dataNotice['code'] == 1){
@@ -76,7 +76,7 @@
                 $count = 0;
                 while ($item = $dataNotice['data']->fetch_assoc()){
                     if($count<3){
-                        array_push($data,array('idcmt'=>$item['id'],'username'=>$item['username'],'comment'=>$item['comment']));
+                        array_push($data,array('idcmt'=>$item['id'],'username'=>$item['username'],'comment'=>$item['comment'],'name'=>$item['yourname'],'type'=>$item['type']));
                         $count++;
                     }
 
@@ -85,8 +85,8 @@
             }
         }
 
-        public function view_comment_subject($idnotice){
-            $sql = "select id, username, comment from notice_comment where idnotice = ?";
+        public function view_comment_notice($idnotice){
+            $sql = "select notice_comment.id, notice_comment.username, notice_comment.comment, account.yourname, account.type from notice_comment, account where notice_comment.username = account.username and idnotice = ?";
             $params = array('i',&$idnotice);
             $dataNotice = $this->query_prepare_select($sql,$params);
             if($dataNotice['code'] == 1){
@@ -94,7 +94,7 @@
             }else{
                 $data = array();
                 while ($item = $dataNotice['data']->fetch_assoc()){
-                    array_push($data,array('idcmt'=>$item['id'],'username'=>$item['username'],'comment'=>$item['comment']));
+                    array_push($data,array('idcmt'=>$item['id'],'username'=>$item['username'],'comment'=>$item['comment'],'name'=>$item['yourname'],'type'=>$item['type']));
                 }
                 return array('data'=>$data);
             }
@@ -125,6 +125,21 @@
                 $data = array();
                 while ($item = $dataStudent['data']->fetch_assoc()){
                     array_push($data,array('student'=>$item['student'],'name'=>$item['yourname'],'email'=>$item['email']));
+                }
+                return array('data'=>$data);
+            }
+        }
+
+        public function get_subject($code){
+            $sql = "select classname, subjectname, room from subject where code = ?";
+            $params = array('s',&$code);
+            $dataSubject = $this->query_prepare_select($sql,$params);
+            if($dataSubject['code'] == 1){
+                $error = 'Lỗi';
+            }else{
+                $data = array();
+                while ($item = $dataSubject['data']->fetch_assoc()){
+                    array_push($data,array('classname'=>$item['classname'],'subjectname'=>$item['subjectname'],'room'=>$item['room']));
                 }
                 return array('data'=>$data);
             }

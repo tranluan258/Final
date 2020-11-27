@@ -126,10 +126,12 @@
                 $notice = $subject->view_notice($_SESSION['currentcode']);
                 $teacher = $subject->view_people_teacher($_SESSION['currentcode']);
                 $student = $subject->view_people_student($_SESSION['currentcode']);
+                $dataSubject = $subject->get_subject($_SESSION['currentcode']);
             }else{
                 $notice = $subject->view_notice($_POST['currentcode']);
                 $teacher = $subject->view_people_teacher($_POST['currentcode']);
                 $student = $subject->view_people_student($_POST['currentcode']);
+                $dataSubject = $subject->get_subject($_POST['currentcode']);
                 $_SESSION['currentcode'] = $_POST['currentcode'];
             }
             $datacmt = array();
@@ -146,7 +148,7 @@
                 $error = $_SESSION['error'];
                 unset($_SESSION['error']);
             }
-            $data = array("errordetail" => $error, 'type' => $_SESSION['type'], 'notice' => $notice, 'noticecmt'=>$datacmt, 'teacher'=>$teacher, 'student'=>$student);
+            $data = array("errordetail" => $error, 'type' => $_SESSION['type'], 'notice' => $notice, 'noticecmt'=>$datacmt, 'teacher'=>$teacher, 'student'=>$student, 'subjectinfo'=>$dataSubject);
 
             $this->render('detail.html', $data);
         }
@@ -157,9 +159,9 @@
                 unset($_SESSION['currentnotice']);
             }
             if (isset($_SESSION['currentnotice'])) {
-                $result = $subject->view_comment_subject($_SESSION['currentnotice']);
+                $result = $subject->view_comment_notice($_SESSION['currentnotice']);
             }else{
-                $result = $subject->view_comment_subject($_POST['currentnotice']);
+                $result = $subject->view_comment_notice($_POST['currentnotice']);
                 $_SESSION['currentnotice'] = $_POST['currentnotice'];
             }
 

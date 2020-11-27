@@ -1,297 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Inside the card</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../app/view/content/detailx.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../app/view/content/detail.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Subject</title>
     <script src="../app/view/content/detail.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 </head>
+<body class = "body_detailsubject">
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <a class="navbar-brand">
+        <span class="menu-collapsed">My Classroom</span>
+    </a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarAdmin" aria-controls="navbarAdmin" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse so123" id="navbarAdmin">
 
-<body>
-<br>
+        <ul class="nav navbar-nav navbar-right so1">
+            <li class="nav-item">
+                <a class="nav-link" href="../">Home</a>
+            </li>
+        </ul>
+
+        <ul class="nav nav-tabs navbar-right so2">
+            <li class="nav-item so21">
+                <a class="nav-link active" data-toggle="tab" href="#stream">Stream</a>
+            </li>
+
+
+
+
+            <li class="nav-item so22">
+                <a class="nav-link" data-toggle="tab" href="#classwork">Classwork</a>
+            </li>
+
+
+            <li class="nav-item so23">
+                <a class="nav-link" data-toggle="tab" href="#people">People</a>
+            </li>
+
+
+            <li class="nav-item so24">
+                <a class="nav-link" data-toggle="tab" href="#files">Files</a>
+            </li>
+
+            <!-- Dropdown -->
+
+        </ul>
+
+        <!-- Log out -->
+        <ul class="nav navbar-nav ml-auto so3">
+            <li class="nav-item dropdown d-sm-block d-lg so23">
+                <a class="nav-link dropdown-toggle" href="#" id="smallerscreenmenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Menu </a>
+                <div class="dropdown-menu" aria-labelledby="smallerscreenmenu">
+                    {% if type != 0 %}
+                    <a class="dropdown-item" href="#top">Xoá lớp học</a>
+                    <a class="dropdown-item" href="#top">Sửa thông tin lớp học</a>
+                    {% elseif type == 0 %}
+                    <form method="post" action="leave_class">
+                        <a name="leaveclass" class="dropdown-item" href=""><!--exit_to_app-->Thoát khỏi lớp học</a>
+                    </form>
+                    {% endif %}
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Log out</a>
+            </li>
+        </ul>
+
+
+    </div>
+</nav>
+
 <div class="alert alert-dark alert-dismissible error_index" role="alert">
     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
     {{ errordetail }}
 </div>
 
-<div class="container">
-    <br>
-    <!-- Nav tabs -->
+<div class="noidung">
+    <div class="caihinhotren">
+        <div class="tenlophocotren">Lớp: {{ subjectinfo.data[0].classname }}</div>
+        <div class="tenmonhocogiua">Môn: {{ subjectinfo.data[0].subjectname }}</div>
+        <div class="phonghocoduoi">Phòng: {{ subjectinfo.data[0].room }}</div>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="tab-content">
+            <!-- Streams -->
+            <div id="stream" class="container tab-pane stream_stream active">
+                <ul class="list-group">
+                    <li class="list-group-item newpost">
+                        <div class="text_with_buttonpost">
+                            <form action="add_notice" method="post" enctype="multipart/form-data">
+                                <textarea type="text" class="text" oninput="auto_grow(this)" placeholder=" Share something with your class here.." name="noticeinfo"></textarea>
+                                <button type="submit" class="btn btn-success posttopdetail" name="addnotice">Post</button>
+                            </form>
 
-    <nav class="navbar navbar-expand-sm bg-light justify-content-center">
-        <!-- Links -->
-        <ul class="nav nav-tabs justify-content-center" style="width:100%;">
-            <li class="nav-item" style="width:30%;">
-                <a href="../" target="_self">
-                    <div class="w3-xlarge w3-text-black" style="font-size:30px">
-                        <i class="fa fa-home"></i>
-                    </div>
-                </a>
-            </li>
-            <li class="nav-item" style="width:10%; text-align:center">
-                <a class="nav-link active" data-toggle="tab" href="#stream">Stream</a>
-            </li>
-            <li class="nav-item" style="width:10%;text-align:center">
-                <a class="nav-link" data-toggle="tab" href="#classwork">Classwork</a>
-            </li>
-            <li class="nav-item" style="width:10%;text-align:center">
-                <a class="nav-link" data-toggle="tab" href="#people">People</a>
-            </li>
-            <li class="nav-item" style="width:10%;text-align:center">
-                <a class="nav-link" data-toggle="tab" href="#files">Files</a>
-            </li>
-
-            <!-- Dropdown -->
-            <li class="nav-item dropdown" style="width:30%;">
-                <a class="nav-link dropdown-toggle float-right" href="#" id="navbardrop" data-toggle="dropdown">
-                    &vellip;
-                </a>
-                <div class="dropdown-menu detailmenuopen">
-                    {% if type == 1 %}
-                    <a class="dropdown-item detailmenuopen" href="#"> <i class='far fa-trash-alt detailmenuopenicon'></i> Xoá lớp học</a>
-                    <a class="dropdown-item detailmenuopen" href="#"> <i class='far fa-edit detailmenuopenicon'></i> Sửa thông tin lớp học</a>
-                    {% elseif type == 0 %}
-                    <form method="post" action="leave_class">
-                        <button type="submit" name="leaveclass" class="dropdown-item detailmenuopen" href=""> <i class="material-icons detailmenuopenicon">exit_to_app</i> Thoát khỏi lớp học</button>
-                    </form>
-
-                    {% endif %}
-                </div>
-            </li>
-        </ul>
-    </nav>
-
-
-    <!-- Tab panes -->
-    <div class="tab-content">
-        <!-- Streams -->
-        <div id="stream" class="container tab-pane active"><br>
-            <div class="content">
-                <ul class="list-group" style="width:900px">
-                    <li class="list-group-item newpost-detail">
-                        <div class="avt-stream content-child">
-                            <img src="../app/view/content/image/teacher.png" alt="Mai Văn Mạnh" class="avt rounded-circle" style="float:left;padding:2px;">
                         </div>
-                        <form action="add_notice" method="post" enctype="multipart/form-data">
-                            <textarea class="topcomment" oninput="auto_grow(this)" placeholder=" Share something with your class here.." name="noticeinfo"></textarea>
-                            <button type="submit" class="btn btn-primary posttopdetail" name="addnotice">Post</button>
-                        </form>
                     </li>
+
                     <li class="list-group-item">
                         {% for i in notice.data %}
-                        <a href="#{{ i.username }}{{ i.idnotice }}" class="btn content-stream" data-toggle="collapse">
-                            <div class="content-child p-3">
-                                <div class="media-body" style="float:left;">
-                                    <div>
-                                        <h4>
-                                            <div class="avt-stream" style="float:left;">
-                                                <img src="../app/view/content/image/teacher.png" alt="Mai Văn Mạnh" class="avt rounded-circle">
-                                            </div>
-                                            <div class="status" style="float:left;">
-                                                {{ i.username }}
-                                                <br>
-                                                <i style="font-size:11px">Posted on {{ i.datepost }}
-                                                </i>
-                                            </div>
-                                        </h4>
-                                    </div>
-                                    <br><br><br><br>
-                                    <p style="text-align:left">
-                                        {{ i.information }}
-                                    </p>
-                                </div>
+                        <a href="#{{ i.username }}{{ i.idnotice }}" class="navbar-collapse card card-body body_stream_noti" data-toggle="collapse">
+                            <div class="text_of_body_stream_noti">
+                                <img src="../app/view/content/image/teachers.png">{{ i.name }}
+                                {% if i.type == 1 %}
+                                (GV)
+                                {% elseif i.type == 0 %}
+                                (HS)
+                                {% endif %}
                             </div>
+                            <div class="ngaydangthongbao">Posted on {{ i.datepost }}</div>
                         </a>
-                        <div id="{{ i.username }}{{ i.idnotice }}" class="collapse openstream">
-                            <!-- Noi dung cmt cua hoc sinh 1 -->
+                        <div class="noidungthongbao">{{ i.information }}</div>
+                        <div id="{{ i.username }}{{ i.idnotice }}" class="collapse thongbao">
+                            <p class="titlehoibuon">Bình luận</p>
                             {% for z in noticecmt %}
                             {% for j in z[i.idnotice].data %}
-                            <div class="statusopenstream">
-                                <div class="namecommentstream">
-                                    <div class="avt-stream content-child">
-                                        <img src="../app/view/content/image/student.png" alt="Mai Văn Mạnh" class="avt-people rounded-circle avtcommentstream">
-                                    </div>
-                                    <i>{{ j.username }} :</i>
+                            <div class="motthangsinhvien">
+                                <div class="caianhcuagiaovien">
+                                    <img src="../app/view/content/image/students.png">
                                 </div>
-                                <div class="detailcommentstream">
-                                        {{ j.comment }}
+                                <div class="student_cmt">
+                                    <label class="student1">{{ j.name }}
+                                        {% if j.type == 1 %}
+                                        (GV)
+                                        {% elseif j.type == 0 %}
+                                        (HS)
+                                        {% endif %}
+                                    </label>
+                                    <label class="haicham">:</label>
+                                    <p class="content_student1">{{ j.comment }}</p>
                                 </div>
                             </div>
                             {% endfor %}
                             {% endfor %}
-                            <div class="deletecommentstream">
-                                <form action="notice" method="post" enctype="multipart/form-data">
-                                    <input class="currentnotice" name="currentnotice" value="{{ i.idnotice }}">
-                                    <button type="submit" class="btn btn-primary" name="viewnotice" id="viewnotice">
-                                        <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>  View notice</button>
-                                </form>
-
-                            </div>
+                            <form action="notice" method="post" enctype="multipart/form-data">
+                                <input class="currentnotice" name="currentnotice" value="{{ i.idnotice }}">
+                                <button type="submit" class="btn btn-primary" name="viewnotice" id="viewnotice">
+                                    <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>View detail</button>
+                            </form>
                         </div>
                         {% endfor %}
                     </li>
-                    <li class="list-group-item" style="text-align:center">. . .</li>
+
+
+
+
+
                 </ul>
             </div>
-        </div>
-        <!-- classwork -->
-        <div id="classwork" class="container tab-pane fade"><br>
-            <ul class="list-group" style="width:900px">
-
-                <li class="list-group-item newpost-detail postassignmentzone">
-                    <a href="#postassignment" class="btn postassignmentzone" data-toggle="collapse">
-                        <div class="avt-stream content-child">
-                            <img src="../app/view/content/image/teacher.png" alt="Mai Văn Mạnh" class="avt rounded-circle" style="float:left;padding:2px;">
-                        </div>
-                        <textarea class="topcomment" oninput="auto_grow(this)" placeholder=" Create assignment for your class .."></textarea>
-                        <button type="button" class="btn btn-primary posttopdetail">Post</button>
-                    </a>
-                    <div id="postassignment" class="collapse" style="padding:20px">
-                        <form action="upload.php" method="post" enctype="multipart/form-data">
-                            <div class="form-group">
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFile" name="fileToUpload">
-                                    <label class="custom-file-label" for="customFile">Choose file</label>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </li>
-
-
-
-
-                <li class="list-group-item">
-                    <a href="#demo" class="btn" data-toggle="collapse">
-                        <div class="media-body" style="float:left;width:800px;">
-                            <div>
-                                <h4>
-                                    <div class="avt-stream" style="float:left;">
-                                        <img src="../app/view/content/image/teacher.png" alt="Mai Văn Mạnh" class="avt rounded-circle">
-                                    </div>
-                                    <div class="status" style="float:left;">
-                                        Mai Văn Mạnh
-                                        <br>
-                                        <i style="font-size:11px">Posted on February 19, 2016
-                                        </i>
-                                    </div>
-                                </h4>
-                            </div>
-                            <br><br><br><br>
-                            <p style="text-align:left">Nộp bài lab 2</p>
-                        </div>
-                    </a>
-                    <div id="demo" class="collapse" style="padding:20px">
-                        <a href="https://fb.com/phungtienxinhdep" target="_self">View assignment</a>
-                    </div>
-                </li>
-
-                <li class="list-group-item" style="text-align:center">. . .</li>
-            </ul>
-        </div>
-        <!-- People -->
-        <div id="people" class="list-member container tab-pane fade"><br>
-            <div class="list-teachers">
-                <div class="chucvu">
-                    <h4>Teachers</h4>
-                </div>
-                {% for i in teacher.data %}
-                <div class="name-teachers">
-                    <h4 class="name-teachers">
-                        <img src="../app/view/content/image/teacher.png" alt="Mai Văn Mạnh" class="avt-people rounded-circle "> {{ i.name }}
-                    </h4>
-                </div>
-                {% endfor %}
-            </div>
-            <br>
-            <div class="list-classmates">
-                <div class="chucvu">
-                    <div>
-                        {% if type == 1 %}
-                        <form action="" method="post" enctype="multipart/form-data">
-                            <button type="submit" class="btn btn-link btnaddstudentpeople">&#10009;</button>
-                        </form>
-                        {% endif %}
-                        <h4>Classmates</h4>
-                    </div>
-
-                </div>
-
-                <!-- Hoc sinh 1 -->
-                {% for i in student.data %}
-                <div class="studentclassmates">
-                    <h6 class="namestudentclassmates">
-                        <img src="../app/view/content/image/student.png" alt="Mai Văn Mạnh" class="avt-people rounded-circle">{{ i.name }}
-                        {% if type == 1 %}
-                        <div class="deletestudentclassmates">
-                            <form action="delete_student" method="post" enctype="multipart/form-data">
-                                <input class="currentstudentdelete" name="currentstudentdelete" id="currentstudentdelete" value="{{ i.student }}">
-                                <button type="submit" name="deletestudent">
-                                    <i class='far fa-trash-alt deletestudentclassmatesdetail'></i>
-                                </button>
+            <div id="classwork" class="container tab-pane stream_stream fade">
+                <ul class="list-group">
+                    <li class="list-group-item newpost">
+                        <div class="text_with_buttonpost">
+                            <form action="add_notice" method="post" enctype="multipart/form-data">
+                                <textarea type="text" class="text" oninput="auto_grow(this)" placeholder=" Share something with your class here.." name="noticeinfo"></textarea>
+                                <button type="submit" class="btn btn-success posttopdetail" name="addnotice">Post</button>
                             </form>
+
                         </div>
+                        <label class="label_browser">Link:</label>
+                        <form>
+                            <button type="submit" class="btn btn-primary browserinstream" name="addnotice">Browser</button>
+                        </form>
+                    </li>
+
+                    <li class="list-group-item">
+                        <a href="#thongbao1" class="navbar-collapse card card-body body_stream_noti" data-toggle="collapse">
+                            <div class="text_of_body_stream_noti">Bài tập 1</div>
+                        </a>
+                        <div id="thongbao1" class="collapse thongbao">
+                            <a href="#" target="_self">View detail</a>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div id="people" class="container tab-pane fade"><br>
+                <div class="list-teachers">
+                    <div class="chucvu">
+                        <h4>Giảng viên</h4>
+                    </div>
+                    <br>
+                    {% for i in teacher.data %}
+                    <div class="name-teachers">
+                        <div class="teachers_name">
+                            <img src="../app/view/content/image/teachers.png"> {{ i.name }}
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <br>
+                </div>
+
+                <div class="list-classmates">
+                    <div class="chucvu">
+                        <h4 class="chucvusinhvien">Sinh viên</h4>
+                        {% if type == 1 %}
+                        <form action="" method="post">
+                            <button class="btn badge-light add_sinhvien_vao"><i class="fa fa-user-plus " aria-hidden="true"></i></button>
+                        </form>
                         {% endif %}
-                    </h6>
+                    </div>
+                    <br>
+
+                    <div class="name-classmates_all">
+                        {% for i in student.data %}
+                        <div class="classmates_name">
+                            <img src="../app/view/content/image/students.png">{{ i.name }}
+                        </div>
+                        {% if type == 1 %}
+                        <form action="delete_student" method="post">
+                            <input class="currentstudentdelete" name="currentstudentdelete" id="currentstudentdelete" value="{{ i.student }}">
+                            <button type="submit" name="deletestudent" class="btn btn-light xoa_sinhvien"><i class="fa fa-user-times" aria-hidden="true"></i></button>
+                        </form>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+
                 </div>
-                {% endfor %}
+                <br>
+
             </div>
+
+
+            <!-- Files -->
+            <div id="files" class="container tab-pane fade"><br>
+                <div class="list-teachers">
+                    <div class="chucvu">
+                        <h4>Tài liệu</h4>
+                    </div>
+                    <br>
+                    <div class="name-teachers">
+                        <h4 class="name-teachers">
+                            Book.docs
+                        </h4>
+                    </div>
+                    <br>
+                </div>
+
+                <div class="list-classmates">
+                    <div class="chucvu">
+                        <h4>Labs</h4>
+                    </div>
+                    <br>
+                    <div class="name-classmates">
+                        <h4 class="name-classmates">
+                            Lab1.rar
+                        </h4>
+                    </div>
+                </div>
+                <br>
+                <div class="list-classmates">
+                    <div class="chucvu">
+                        <h4>Slides</h4>
+                    </div>
+                    <br>
+                    <div class="name-classmates">
+                        <h4 class="name-classmates">
+                            Lab1.ppt
+                        </h4>
+                    </div>
+                </div>
+            </div>
+
 
         </div>
 
-        <!-- Files -->
-        <div id="files" class="container tab-pane fade"><br>
-            <div class="list-teachers">
-                <div class="chucvu">
-                    <h4>Tài liệu</h4>
-                </div>
-                <br>
-                <div class="name-teachers">
-                    <h4 class="name-teachers">
-                        Book.docs
-                    </h4>
-                </div>
-                <br>
-            </div>
 
-            <div class="list-classmates">
-                <div class="chucvu">
-                    <h4>Labs</h4>
-                </div>
-                <br>
-                <div class="name-classmates">
-                    <h4 class="name-classmates">
-                        Lab1.rar
-                    </h4>
-                </div>
-            </div>
-            <br>
-            <div class="list-classmates">
-                <div class="chucvu">
-                    <h4>Slides</h4>
-                </div>
-                <br>
-                <div class="name-classmates">
-                    <h4 class="name-classmates">
-                        Lab1.ppt
-                    </h4>
-                </div>
-            </div>
-        </div>
+
+        <!-- linhkook -->
+
+
+
+
+
+        <!-- classwork -->
+
+        <!-- People -->
+
 
     </div>
+    <!-- linhkook -->
+
 </div>
 
-</body>
 
+</body>
 </html>
