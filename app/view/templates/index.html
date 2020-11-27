@@ -12,6 +12,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>Home page</title>
     <script src="./app/view/content/main.js"></script>
+    <script src="./app/view/content/search.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 </head>
 <body class = "body_homepage">
@@ -114,7 +115,7 @@
         <ul class="nav navbar-nav navbar-right ">
             <li class="nav-item">
                 <span class="icon"><i class="fa fa-search"></i></span>
-                <input type="search" class="box_search" id="search" placeholder="Search..." />
+                <input oninput="suggest(this.value)" type="search" class="box_search" id="search" placeholder="Search..." />
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -131,9 +132,9 @@
 </div>
 
 <div class="container-fluid">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center parent-list">
        {% for i in subject.data %}
-        <div class="col-md-3 col-sm-6 col-xs-12 row-container">
+        <div class="col-md-3 col-sm-6 col-xs-12 row-container list-subject">
             <form action="subject/detail" method="post">
                 <div class="subject_homepage">
                     <div class="textsubject_homepage">
@@ -155,8 +156,11 @@
             </form>
         </div>
         {% endfor %}
+        </div>
+    <div class="row justify-content-center parent-search-list">
+
     </div>
-</div>
+    </div>
 
 
 </body>

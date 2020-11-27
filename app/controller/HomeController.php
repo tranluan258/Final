@@ -28,5 +28,24 @@
                 $this->render('index.html',$data);
             }
         }
+
+        public function search(){
+            $q = $_REQUEST["q"];
+            $q = strtolower($q);
+            $home = new HomeModel();
+            if($_SESSION['type'] != 2){
+                $result = $home->view_subject($_SESSION['username'],$_SESSION['type']);
+            }else{
+                $result = $home->get_all();
+            }
+            $array = array();
+            foreach ($result['data'] as $key){
+                if(stristr($q, substr($key['subjectname'], 0, strlen($q)))){
+                    array_push($array,$key);
+                }
+            }
+            echo json_encode($array);
+        }
+
     }
 ?>
