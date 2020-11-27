@@ -208,7 +208,7 @@
                         if($data == null){
                             $error = 'Password không đúng';
                         }else{
-                            $data = $account->update_pass($_SESSION['username'],$pass);
+                            $data = $account->update_pass($_SESSION['username'],$new_pass);
                             $error = "Đổi mật khẩu thành công";
                         }
                     }
