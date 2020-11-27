@@ -136,7 +136,7 @@
             foreach ($notice as &$noticecmt){
                 foreach ($noticecmt as &$value){
                     $currentnotice = $value['idnotice'];
-                    $cmt = $subject->view_comment_highlight($value['idnotice']);
+                    $cmt = $subject->view_comment_highlight_notice($value['idnotice']);
                     array_push($datacmt,array($currentnotice=>$cmt));
                 }
             }
@@ -157,9 +157,9 @@
                 unset($_SESSION['currentnotice']);
             }
             if (isset($_SESSION['currentnotice'])) {
-                $result = $subject->view_comment($_SESSION['currentnotice']);
+                $result = $subject->view_comment_subject($_SESSION['currentnotice']);
             }else{
-                $result = $subject->view_comment($_POST['currentnotice']);
+                $result = $subject->view_comment_subject($_POST['currentnotice']);
                 $_SESSION['currentnotice'] = $_POST['currentnotice'];
             }
 

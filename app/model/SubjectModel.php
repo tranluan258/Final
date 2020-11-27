@@ -65,7 +65,7 @@
             }
         }
 
-        public function view_comment_highlight($idnotice){
+        public function view_comment_highlight_notice($idnotice){
             $sql = "select id, username, comment from notice_comment where idnotice = ?";
             $params = array('i',&$idnotice);
             $dataNotice = $this->query_prepare_select($sql,$params);
@@ -85,7 +85,7 @@
             }
         }
 
-        public function view_comment($idnotice){
+        public function view_comment_subject($idnotice){
             $sql = "select id, username, comment from notice_comment where idnotice = ?";
             $params = array('i',&$idnotice);
             $dataNotice = $this->query_prepare_select($sql,$params);
