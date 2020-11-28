@@ -171,5 +171,9 @@
             }
         }
 
+
+        public function send_email_student($email_teacher,$email_student,$message){
+
+        }
     }
 ?>
