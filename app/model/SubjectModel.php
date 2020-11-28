@@ -54,7 +54,7 @@
         }
 
         public function view_notice($code){
-            $sql = "select notice.id, notice.username, notice.information, notice.datepost, account.yourname, account.type from notice,account where notice.username = account.username and class = ?";
+            $sql = "select notice.id, notice.username, notice.information,notice.link, notice.datepost, account.yourname, account.type from notice,account where notice.username = account.username and class = ?";
             $params = array('s',&$code);
             $dataSubject = $this->query_prepare_select($sql,$params);
             if($dataSubject['code'] == 1){
@@ -63,7 +63,7 @@
                 $data = array();
 
                 while ($item = $dataSubject['data']->fetch_assoc()){
-                    array_push($data,array('idnotice'=>$item['id'],'username'=>$item['username'],'information'=>$item['information'],'datepost'=>$item['datepost'],'name'=>$item['yourname'],'type'=>$item['type']));
+                    array_push($data,array('idnotice'=>$item['id'],'username'=>$item['username'],'information'=>$item['information'],'link'=>$item['link'],'datepost'=>$item['datepost'],'name'=>$item['yourname'],'type'=>$item['type']));
                 }
                 return array('data'=>$data);
             }
@@ -150,7 +150,7 @@
         }
 
         public function get_notice_by_id($idnotice){
-            $sql = "select notice.username, notice.information, notice.datepost, account.yourname, account.type from notice,account where account.username = notice.username and id = ?";
+            $sql = "select notice.username, notice.information,notice.link, notice.datepost, account.yourname, account.type from notice,account where account.username = notice.username and id = ?";
             $params = array('i',&$idnotice);
             $dataNotice = $this->query_prepare_select($sql,$params);
             if($dataNotice['code'] == 1){
@@ -158,7 +158,7 @@
             }else{
                 $data = array();
                 while ($item = $dataNotice['data']->fetch_assoc()){
-                    array_push($data,array('username'=>$item['username'],'info'=>$item['information'],'datepost'=>$item['datepost'],'name'=>$item['yourname'],'type'=>$item['type']));
+                    array_push($data,array('username'=>$item['username'],'info'=>$item['information'],'link'=>$item['link'],'datepost'=>$item['datepost'],'name'=>$item['yourname'],'type'=>$item['type']));
                 }
                 return array('data'=>$data);
             }
@@ -191,6 +191,19 @@
         public function add_notice($code,$username,$information){
             $sql = "insert into notice(class,username,information) values (?,?,?)";
             $params = array('sss',&$code,&$username,&$information);
+
+            $data = $this->query_prepare_insert($sql,$params);
+
+            if($data['code']==1){
+                return array('code'=>1, 'message'=>'Đăng thông báo thất bại!');
+            }else{
+                return array('code'=>0, 'message'=>'Đăng thông báo thành công!');
+            }
+        }
+
+        public function add_classwork($code,$username,$information,$link){
+            $sql = "insert into notice(class,username,information,link) values (?,?,?,?)";
+            $params = array('ssss',&$code,&$username,&$information,&$link);
 
             $data = $this->query_prepare_insert($sql,$params);
 

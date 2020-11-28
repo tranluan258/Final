@@ -95,6 +95,42 @@
             }
         }
 
+        public function add_classwork(){
+            if(isset($_POST['addclasswork'])){
+                $error = '';
+                $info = '';
+                $username = $_SESSION['username'];
+                $code = $_SESSION['currentcode'];
+                if(isset($_POST['classworkinfo'])){
+                    $noticeinfo = $_POST['clasworkinfo'];
+                    if(empty($noticeinfo)){
+                        $error = 'Vui lòng nhập thông báo';
+                    }else{
+                        $subject = new SubjectModel();
+                        if(isset($_FILES['file']['name'])){
+                            $file_name = $_FILES['file']['name'];
+                            $link = '../upload/'.$file_name;
+                            print_r($file_name);
+                            $result = $subject->add_classwork($code,$username,$noticeinfo,$link);
+                            move_uploaded_file($_FILES['file']['name'],$link);
+                        }else{
+                            $result = $subject->add_notice($code,$username,$noticeinfo);
+                        }
+
+                        if ($result['code'] == 1) {
+                            $error = 'Đăng thông báo thất bại';
+                        } else {
+                            $error = 'Đăng thông báo thành công';
+                        }
+
+
+                    }
+                    $_SESSION['error'] = $error;
+                    header("Location: detail");
+                }
+            }
+        }
+
         public function join_code(){
             $error = '';
             if(isset($_POST['join'])){

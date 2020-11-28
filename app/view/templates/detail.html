@@ -106,6 +106,7 @@
 
                     <li class="list-group-item">
                         {% for i in notice.data %}
+                        {% if i.link is null %}
                         <a href="#{{ i.username }}{{ i.idnotice }}" class="navbar-collapse card card-body body_stream_noti" data-toggle="collapse">
                             <div class="text_of_body_stream_noti">
                                 <img src="../app/view/content/image/teachers.png">{{ i.name }}
@@ -118,6 +119,7 @@
                             <div class="ngaydangthongbao">Posted on {{ i.datepost }}</div>
                         </a>
                         <div class="noidungthongbao">{{ i.information }}</div>
+                        {% endif %}
                         <div id="{{ i.username }}{{ i.idnotice }}" class="collapse thongbao">
                             <p class="titlehoibuon">Bình luận</p>
                             {% for z in noticecmt %}
@@ -159,16 +161,13 @@
                 <ul class="list-group">
                     <li class="list-group-item newpost">
                         <div class="text_with_buttonpost">
-                            <form action="add_notice" method="post" enctype="multipart/form-data">
-                                <textarea type="text" class="text" oninput="auto_grow(this)" placeholder=" Share something with your class here.." name="noticeinfo"></textarea>
-                                <button type="submit" class="btn btn-success posttopdetail" name="addnotice">Post</button>
-                            </form>
+                            <form action="add_classwork" method="post" enctype="multipart/form-data">
+                                <textarea type="text" class="text" oninput="auto_grow(this)" placeholder=" Share something with your class here.." name="classworkinfo"></textarea>
+                                <button type="submit" class="btn btn-success posttopdetail" name="addclasswork">Post</button>
 
+                                <input type="file" name="file" multiple>
+                            </form>
                         </div>
-                        <label class="label_browser">Link:</label>
-                        <form>
-                            <button type="submit" class="btn btn-primary browserinstream" name="addnotice">Browser</button>
-                        </form>
                     </li>
 
                     <li class="list-group-item">
