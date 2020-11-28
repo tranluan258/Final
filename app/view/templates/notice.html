@@ -59,10 +59,9 @@
                         <div class="kebencaihinhgiaovienthongbao">
                             <div class="tieudethongbao">
 
-                                Mai đóng học phí nha các em
+                                {{ notice.data[0].name }}
                             </div>
                             <div class="giangvienthongbao">
-                                {{ notice.data[0].yourname }}
                                 {% if notice.data[0].type == 1 %}
                                 (GV)
                                 {% elseif notice.data[0].type == 0 %}
