@@ -163,21 +163,24 @@
                         <div class="text_with_buttonpost">
                             <form action="add_classwork" method="post" enctype="multipart/form-data">
                                 <textarea type="text" class="text" oninput="auto_grow(this)" placeholder=" Share something with your class here.." name="classworkinfo"></textarea>
-                                <button type="submit" class="btn btn-success posttopdetail" name="addclasswork">Post</button>
-
                                 <input type="file" name="file" multiple>
+                                <button type="submit" class="btn btn-success posttopdetail" name="addclasswork">Post</button>
                             </form>
                         </div>
                     </li>
 
                     <li class="list-group-item">
+                        {% for i in notice.data %}
+                        {% if i.link is not null %}
                         <a href="#thongbao1" class="navbar-collapse card card-body body_stream_noti" data-toggle="collapse">
-                            <div class="text_of_body_stream_noti">Bài tập 1</div>
+                            <div class="text_of_body_stream_noti">{{ i.information }}</div>
                         </a>
                         <div id="thongbao1" class="collapse thongbao">
                             <a href="#" target="_self">View detail</a>
 
                         </div>
+                        {% endif %}
+                        {% endfor %}
                     </li>
                 </ul>
             </div>

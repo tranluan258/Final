@@ -102,17 +102,17 @@
                 $username = $_SESSION['username'];
                 $code = $_SESSION['currentcode'];
                 if(isset($_POST['classworkinfo'])){
-                    $noticeinfo = $_POST['clasworkinfo'];
+                    $noticeinfo = $_POST['classworkinfo'];
                     if(empty($noticeinfo)){
                         $error = 'Vui lòng nhập thông báo';
                     }else{
                         $subject = new SubjectModel();
 
-                            $file_name = $_FILES['file']['name'];
-                            $link = '../upload/'.$file_name;
-                            print_r($file_name);
-                            $result = $subject->add_classwork($code,$username,$noticeinfo,$link);
-                            move_uploaded_file($_FILES['file']['name'],$link);
+                        $file_name = $_FILES['file']['name'];
+                        $link = 'app/upload/'.$file_name;
+                        print_r($file_name);
+                        $result = $subject->add_classwork($code,$username,$noticeinfo,$link);
+                        move_uploaded_file($_FILES['file']['tmp_name'],$link);
 
 
                         if ($result['code'] == 1) {
