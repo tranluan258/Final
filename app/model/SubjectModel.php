@@ -1,5 +1,9 @@
 <?php
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\Exception;
     class SubjectModel extends BaseModel{
+
 
         function get_all()
         {
@@ -145,6 +149,30 @@
             }
         }
 
+        public function get_email_by_username($username){
+            $sql = "select email from account where username = ?";
+            $params = array('s',&$username);
+            $email = $this->query_one_select($sql,$params);
+
+            return array('email'=>$email['data']['email']);
+        }
+
+        public function get_list_student_not_join($code){
+            $sql =  "SELECT account.username,account.yourname,account.email FROM account WHERE account.type = 0 and not EXISTS(SELECT subject_info.student FROM subject_info WHERE subject_info.student = account.username and code = ?)";
+            $params = array('s',&$code);
+            $list_data = $this->query_prepare_select($sql,$params);
+            if($list_data['code'] == 1){
+                $error = 'Lỗi';
+            }else{
+                $data = array();
+                while ($item = $list_data['data']->fetch_assoc()){
+                    array_push($data,array('username'=>$item['username'],'name'=>$item['yourname'],'email'=>$item['email']));
+                }
+                return array('data'=>$data);
+            }
+
+        }
+
         public function add_notice($code,$username,$information){
             $sql = "insert into notice(class,username,information) values (?,?,?)";
             $params = array('sss',&$code,&$username,&$information);
@@ -173,7 +201,42 @@
 
 
         public function send_email_student($email_teacher,$email_student,$message){
+            $mail = new PHPMailer(true);
 
+            try {
+                //Server settings
+                // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                  // Enable verbose debug output
+                $mail->isSMTP();                                            // Send using SMTP
+                $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
+                $mail->SMTPAuth   = true;                                  // Enable SMTP authentication
+                $mail->Username   = 'tranluanqqq@gmail.com';                     // SMTP username
+                $mail->Password   = 'hiqpeiviszlbqgae';                               // SMTP password
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+                $mail->Port       = 25;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+
+                //Recipients
+                $mail->setFrom($email_teacher, 'Giảng viên');
+                $mail->addAddress($email_student, 'Sinh viên');     // Add a recipient
+                // $mail->addAddress('ellen@example.com');               // Name is optional
+                // $mail->addReplyTo('info@example.com', 'Information');
+                // $mail->addCC('cc@example.com');
+                // $mail->addBCC('bcc@example.com');
+
+                // // Attachments
+                // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+                // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+
+                // Content
+                $mail->isHTML(true);                                  // Set email format to HTML
+                $mail->Subject = 'Thông báo';
+                $mail->Body    = $message;
+                //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+                $mail->send();
+                return true;
+            } catch (Exception $e) {
+                echo $e;
+            }
         }
     }
 ?>
