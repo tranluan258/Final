@@ -89,6 +89,7 @@
             }
         }
 
+
         public function view_comment_notice($idnotice){
             $sql = "select notice_comment.id, notice_comment.username, notice_comment.comment, account.yourname, account.type from notice_comment, account where notice_comment.username = account.username and idnotice = ?";
             $params = array('i',&$idnotice);

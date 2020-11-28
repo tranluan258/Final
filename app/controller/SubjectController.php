@@ -12,6 +12,7 @@
             }
         }
 
+
         public function add_student_choose(){
             if(isset($_POST['add-student-choose'])){
                 $error = '';
