@@ -11,13 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37019a64-43c3-4573-98e9-aef5311ad553" name="Default Changelist" comment="subject again">
-      <change afterPath="$PROJECT_DIR$/app/view/content/notice.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controller/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/AccountController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controller/SubjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/SubjectController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/model/SubjectModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/SubjectModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/templates/add_student.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/templates/add_student.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/templates/notice.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/templates/notice.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,9 +251,9 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1606485414019" />
-    <state x="586" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606485386672">
+    <state x="586" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606549137188">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="586" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1606485386672" />
+    <state x="586" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1606549137188" />
   </component>
 </project>

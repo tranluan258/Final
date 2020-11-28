@@ -7,6 +7,7 @@
 
                 $list_student = $subject->get_list_student_not_join($_SESSION['currentcode']);
                 $subjectinfo = $subject->get_subject($_SESSION['currentcode']);
+
                 $this->render('add_student.html',array('student'=>$list_student,'subjectinfo'=>$subjectinfo));
             }
         }
@@ -17,13 +18,14 @@
                 $subject = new SubjectModel();
                 $data_email_teacher = $subject->get_email_by_username($_SESSION['username']);
                 $email_teacher = $data_email_teacher['email'];
+                $teacher_name = $data_email_teacher['name'];
                 $code = $_SESSION['currentcode'];
                 $message = "Bạn được mời tham gia vào lớp học, sử dụng code: <b>$code</b> để tham gia vào lớp.";
                 if(isset($_POST['liststudent'])){
                     $list_choose = $_POST['liststudent'];
 
                     for($i=0;$i<count($list_choose);$i++){
-                        $subject->send_email_student($email_teacher,$list_choose[$i],$message);
+                        $subject->send_email_student($email_teacher,$teacher_name,$list_choose[$i],$message);
                     }
                     $error = 'Mời học sinh vào lớp thành công';
                     $_SESSION['error'] = $error;

@@ -165,11 +165,11 @@
         }
 
         public function get_email_by_username($username){
-            $sql = "select email from account where username = ?";
+            $sql = "select email, yourname from account where username = ?";
             $params = array('s',&$username);
             $email = $this->query_one_select($sql,$params);
 
-            return array('email'=>$email['data']['email']);
+            return array('email'=>$email['data']['email'],'name'=>$email['data']['yourname']);
         }
 
         public function get_list_student_not_join($code){
@@ -215,7 +215,7 @@
         }
 
 
-        public function send_email_student($email_teacher,$email_student,$message){
+        public function send_email_student($email_teacher,$teacher_name,$email_student,$message){
             $mail = new PHPMailer(true);
 
             try {
@@ -231,7 +231,7 @@
 
                 //Recipients
                 $mail->CharSet  = 'UTF-8';
-                $mail->setFrom($email_teacher, 'Giảng viên');
+                $mail->setFrom($email_teacher, $teacher_name);
                 $mail->addAddress($email_student, 'Sinh viên');     // Add a recipient
                 // $mail->addAddress('ellen@example.com');               // Name is optional
                 // $mail->addReplyTo('info@example.com', 'Information');
