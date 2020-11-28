@@ -9,7 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>Thêm sinh viên</title>
-    <script src="js/main.js" ></script>
+    <script src="../app/view/content/select.js" ></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 </head>
 <body class = "body_addstudent">
@@ -98,10 +98,8 @@
                 <div class="phanthanaddstudent">
                     <li class="list-group-item">
                         <ul class="chonhetluon">
-                            <form>
-                                <button class="chonhetluon">Select all</button>
-                                <button class="bochonhetluon">Cancle</button>
-                            </form>
+                            <button onclick="selectAll()" class="chonhetluon">Select all</button>
+                            <button onclick="UnSelectAll()" class="bochonhetluon">Cancle</button>
                         </ul>
                     </li>
                 </div>
