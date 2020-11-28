@@ -10,8 +10,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37019a64-43c3-4573-98e9-aef5311ad553" name="Default Changelist" comment="notice detail">
+    <list default="true" id="37019a64-43c3-4573-98e9-aef5311ad553" name="Default Changelist" comment="subject again">
+      <change afterPath="$PROJECT_DIR$/app/view/content/notice.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controller/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/AccountController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controller/SubjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/SubjectController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/SubjectModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/SubjectModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/templates/add_student.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/templates/add_student.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/view/templates/notice.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/templates/notice.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -194,14 +199,7 @@
       <option name="project" value="LOCAL" />
       <updated>1606485406756</updated>
     </task>
-    <task id="LOCAL-00014" summary="notice detail">
-      <created>1606548687487</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1606548687487</updated>
-    </task>
-    <option name="localTasksCounter" value="15" />
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,8 +228,7 @@
     <MESSAGE value="leave class" />
     <MESSAGE value="delete student" />
     <MESSAGE value="subject again" />
-    <MESSAGE value="notice detail" />
-    <option name="LAST_COMMIT_MESSAGE" value="notice detail" />
+    <option name="LAST_COMMIT_MESSAGE" value="subject again" />
   </component>
   <component name="WindowStateProjectService">
     <state x="574" y="114" key="#com.intellij.ide.util.MemberChooser" timestamp="1606286233521">
@@ -254,17 +251,13 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="277" y="77" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1606234925272" />
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1606548689773">
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1606485414019">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1606548689773" />
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1606485414019" />
     <state x="586" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606485386672">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="586" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1606485386672" />
-    <state x="424" y="197" key="run.anything.popup" timestamp="1606548698729">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="424" y="197" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1606548698729" />
   </component>
 </project>
