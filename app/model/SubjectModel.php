@@ -149,6 +149,21 @@
             }
         }
 
+        public function get_notice_by_id($idnotice){
+            $sql = "select notice.username, notice.information, notice.datepost, account.yourname, account.type from notice,account where account.username = notice.username and id = ?";
+            $params = array('i',&$idnotice);
+            $dataNotice = $this->query_prepare_select($sql,$params);
+            if($dataNotice['code'] == 1){
+                $error = 'Lỗi';
+            }else{
+                $data = array();
+                while ($item = $dataNotice['data']->fetch_assoc()){
+                    array_push($data,array('username'=>$item['username'],'info'=>$item['information'],'datepost'=>$item['datepost'],'name'=>$item['yourname'],'type'=>$item['type']));
+                }
+                return array('data'=>$data);
+            }
+        }
+
         public function get_email_by_username($username){
             $sql = "select email from account where username = ?";
             $params = array('s',&$username);

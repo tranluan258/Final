@@ -189,13 +189,15 @@
             }
             if (isset($_SESSION['currentnotice'])) {
                 $result = $subject->view_comment_notice($_SESSION['currentnotice']);
+                $infonotice = $subject->get_notice_by_id($_SESSION['currentnotice']);
             }else{
                 $result = $subject->view_comment_notice($_POST['currentnotice']);
+                $infonotice = $subject->get_notice_by_id($_POST['currentnotice']);
                 $_SESSION['currentnotice'] = $_POST['currentnotice'];
             }
 
-            $data = array('type' => $_SESSION['type'], 'comment' => $result);
-            print_r($data);
+            $data = array('type' => $_SESSION['type'], 'comment' => $result, 'notice' => $infonotice);
+
             $this->render('notice.html', $data);
         }
 

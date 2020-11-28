@@ -53,7 +53,7 @@
 
         public function logout(){
             session_destroy();
-            header("Location: http://localhost/Final/account/login");
+            header("Location: login");
         }
         
         public function signup(){

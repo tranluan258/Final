@@ -1,0 +1,78 @@
+.detailnoti{
+    width: 100%;
+
+}
+.quametmoiroi{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+.caianhgiaovienthongbao{
+    width: 10%;
+    height: 100%;
+}
+.kebencaihinhgiaovienthongbao{
+    width: 85%;
+    height: 100%;
+    margin-left: 20px;
+}
+.tieudethongbao{
+    font-weight: bold;
+    font-size: 30px;
+}
+.giangvienthongbao{
+    font-size: 20px;
+}
+.ngaythongbao{
+    font-size: 12px;
+    font-style: italic;
+}
+.titlecomment{
+    font-weight: bold;
+    font-style: italic;
+}
+.commented{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.caianhcommenting{
+    width: 5%;
+    height: 100%;
+}
+.commenting_of_student{
+    width: 90%;
+}
+.student_commented{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.studentoi{
+    width: 10%;
+    margin-left: 15px;
+}
+.haichamoi{
+    width: 2%;
+}
+.commenting{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.cuoicung{
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+}
+.textboxcommenthihi{
+    width: 80%;
+    float: right;
+    border-radius: 10px;
+}
+.cmtchovui{
+    width: 20%;
+    float: right;
+    margin-left: 10px;
+}
