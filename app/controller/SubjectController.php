@@ -107,15 +107,13 @@
                         $error = 'Vui lòng nhập thông báo';
                     }else{
                         $subject = new SubjectModel();
-                        if(isset($_FILES['file']['name'])){
+
                             $file_name = $_FILES['file']['name'];
                             $link = '../upload/'.$file_name;
                             print_r($file_name);
                             $result = $subject->add_classwork($code,$username,$noticeinfo,$link);
                             move_uploaded_file($_FILES['file']['name'],$link);
-                        }else{
-                            $result = $subject->add_notice($code,$username,$noticeinfo);
-                        }
+
 
                         if ($result['code'] == 1) {
                             $error = 'Đăng thông báo thất bại';
