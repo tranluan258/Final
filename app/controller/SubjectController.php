@@ -95,6 +95,30 @@
             }
         }
 
+        public function add_comment(){
+            if(isset($_POST['addcomment'])){
+                $error = '';
+                $username = $_SESSION['username'];
+                $idnotice = $_SESSION['currentnotice'];
+                if(isset($_POST['noticecomment'])){
+                    $comment = $_POST['noticecomment'];
+                    if(empty($comment)){
+                        $error = 'Vui lòng nhập bình luận';
+                    }else{
+                        $subject = new SubjectModel();
+                        $result = $subject->add_comment($idnotice,$username,$comment);
+                        if ($result['code'] == 1) {
+                            $error = 'Bình luận thất bại';
+                        } else {
+                            $error = 'Bình luận thành công';
+                        }
+                    }
+                    $_SESSION['error'] = $error;
+                    header("Location: notice");
+                }
+            }
+        }
+
         public function add_classwork(){
             if(isset($_POST['addclasswork'])){
                 $error = '';

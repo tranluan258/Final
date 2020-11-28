@@ -70,7 +70,7 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Log out</a>
+                <a class="nav-link" href="../account/logout">Log out</a>
             </li>
         </ul>
 
@@ -172,10 +172,12 @@
                     <li class="list-group-item">
                         {% for i in notice.data %}
                         {% if i.link is not null %}
-                        <a href="#thongbao1" class="navbar-collapse card card-body body_stream_noti" data-toggle="collapse">
-                            <div class="text_of_body_stream_noti">{{ i.information }}</div>
+                        <a href="#{{ i.username }}{{ i.idnotice }}{{ i.idnotice }}" class="navbar-collapse card card-body body_stream_noti" data-toggle="collapse">
+                            <div class="text_of_body_stream_noti">{{ i.name }}</div>
+                            <p>Post on {{ i.datepost }}</p>
+                            <p>Nội dung: {{ i.information }}</p>
                         </a>
-                        <div id="thongbao1" class="collapse thongbao">
+                        <div id="{{ i.username }}{{ i.idnotice }}{{ i.idnotice }}" class="collapse thongbao">
                             <a href="#" target="_self">View detail</a>
 
                         </div>

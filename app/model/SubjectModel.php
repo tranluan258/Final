@@ -201,6 +201,19 @@
             }
         }
 
+        public function add_comment($idnotice,$username,$comment){
+            $sql = "insert into notice_comment(idnotice,username,comment) values (?,?,?)";
+            $params = array('sss',&$idnotice,&$username,&$comment);
+
+            $data = $this->query_prepare_insert($sql,$params);
+
+            if($data['code']==1){
+                return array('code'=>1, 'message'=>'Bình luận thất bại!');
+            }else{
+                return array('code'=>0, 'message'=>'Bình luận thành công!');
+            }
+        }
+
         public function add_classwork($code,$username,$information,$link){
             $sql = "insert into notice(class,username,information,link) values (?,?,?,?)";
             $params = array('ssss',&$code,&$username,&$information,&$link);
