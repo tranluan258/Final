@@ -169,7 +169,7 @@
                         {% for i in notice.data %}
                         {% if i.link is not null %}
                         {% set name = i.link|split("/") %}
-                        <a href="#{{ i.username }}{{ i.idnotice }}" class="navbar-collapse card card-body body_stream_noti" data-toggle="collapse">
+                        <a href="#{{ i.username }}{{ i.idnotice }}{{ i.idnotice }}" class="navbar-collapse card card-body body_stream_noti" data-toggle="collapse">
                             <div class="text_of_body_stream_noti">
                                 <img src="../app/view/content/image/teachers.png">{{ i.name }}
                                 {% if i.type == 1 %}
@@ -180,11 +180,10 @@
                             </div>
                             <p>Post on {{ i.datepost }}</p>
                             <p>Nội dung: {{ i.information }}</p>
-                            <span>Tài liệu: </span>
                             <a href="../{{ i.link }}">{{ name[name|length-1] }}</a>
                         </a>
                         {% endif %}
-                        <div id="{{ i.username }}{{ i.idnotice }}" class="collapse thongbao">
+                        <div id="{{ i.username }}{{ i.idnotice }}{{ i.idnotice }}" class="collapse thongbao">
                             <p class="titlehoibuon">Bình luận</p>
                             {% for z in noticecmt %}
                             {% for j in z[i.idnotice].data %}
@@ -208,7 +207,7 @@
                             {% endfor %}
                             <form action="notice" method="post" enctype="multipart/form-data">
                                 <input class="currentnotice" name="currentnotice" value="{{ i.idnotice }}">
-                                <button type="submit" class="btn btn-primary" name="viewnotice" id="viewnotice">
+                                <button type="submit" class="btn btn-primary" name="viewnotice" id="viewnoticec">
                                     <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>View detail</button>
                             </form>
                         </div>
