@@ -40,7 +40,7 @@
             }
             $array = array();
             foreach ($result['data'] as $key){
-                if(stristr($q, substr($key['subjectname'], 0, strlen($q)))){
+                if(stristr($q, substr($key['subjectname'], 0, strlen($q))) || stristr($q, substr($key['room'], 0, strlen($q))) || stristr($q, substr($key['classname'], 0, strlen($q)))){
                     array_push($array,$key);
                 }
             }
