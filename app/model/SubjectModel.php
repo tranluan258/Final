@@ -70,7 +70,7 @@
         }
 
         public function view_comment_highlight_notice($idnotice){
-            $sql = "select notice_comment.id, notice_comment.username, notice_comment.comment, account.yourname, account.type from notice_comment, account where notice_comment.username = account.username and idnotice = ?";
+            $sql = "select notice_comment.id, notice_comment.username, notice_comment.comment, account.yourname, account.type from notice_comment, account where notice_comment.username = account.username and idnotice = ? ORDER BY notice_comment.id";
             $params = array('i',&$idnotice);
             $dataNotice = $this->query_prepare_select($sql,$params);
             if($dataNotice['code'] == 1){
@@ -91,7 +91,7 @@
 
 
         public function view_comment_notice($idnotice){
-            $sql = "select notice_comment.id, notice_comment.username, notice_comment.comment, account.yourname, account.type from notice_comment, account where notice_comment.username = account.username and idnotice = ?";
+            $sql = "select notice_comment.id, notice_comment.username, notice_comment.comment, account.yourname, account.type from notice_comment, account where notice_comment.username = account.username and idnotice = ? ORDER BY notice_comment.id";
             $params = array('i',&$idnotice);
             $dataNotice = $this->query_prepare_select($sql,$params);
             if($dataNotice['code'] == 1){
@@ -238,6 +238,19 @@
                 return array('code'=>1, 'message'=>'Rời lớp học thất bại!');
             }else{
                 return array('code'=>0, 'message'=>'Rời lớp học thành công!');
+            }
+        }
+
+        public function delete_comment($idcmt,$idnotice){
+            $sql = "DELETE FROM `notice_comment` WHERE id = ? and idnotice = ?";
+            $params = array('ss',&$idcmt,&$idnotice);
+
+            $data = $this->query_prepare_delete($sql,$params);
+
+            if($data['code']==1){
+                return array('code'=>1, 'message'=>'Xóa bình luận thất bại!');
+            }else{
+                return array('code'=>0, 'message'=>'Xóa bình luận thành công!');
             }
         }
 

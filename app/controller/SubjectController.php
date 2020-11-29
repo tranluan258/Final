@@ -204,6 +204,23 @@
             }
         }
 
+        public function delete_comment(){
+            $error = '';
+            $idnotice = $_SESSION['currentnotice'];
+            if(isset($_POST['deletecomment'])){
+                $idcmt = $_POST['currentcommentdelete'];
+                $subject = new SubjectModel();
+                $data = $subject->delete_comment($idcmt,$idnotice);
+                if($data['code'] == 1){
+                    $error = "Xóa bình luận thất bại!";
+                } else {
+                    $error = "Xóa bình luận thành công!";
+                }
+                $_SESSION['error'] = $error;
+                header("Location: notice");
+            }
+        }
+
         public function detail()
         {
             $error = 'Xin chào' . ' ' . $_SESSION['yourname'] . '!';;

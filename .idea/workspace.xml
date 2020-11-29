@@ -10,9 +10,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37019a64-43c3-4573-98e9-aef5311ad553" name="Default Changelist" comment="aaa">
+    <list default="true" id="37019a64-43c3-4573-98e9-aef5311ad553" name="Default Changelist" comment="change responsive">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controller/SubjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/SubjectController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/SubjectModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/SubjectModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/templates/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/templates/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/templates/notice.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/templates/notice.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606658031329</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="change responsive">
+      <created>1606658493906</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1606658493906</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,7 +276,8 @@
     <MESSAGE value="alo" />
     <MESSAGE value="comment notice" />
     <MESSAGE value="aaa" />
-    <option name="LAST_COMMIT_MESSAGE" value="aaa" />
+    <MESSAGE value="change responsive" />
+    <option name="LAST_COMMIT_MESSAGE" value="change responsive" />
   </component>
   <component name="WindowStateProjectService">
     <state x="574" y="114" key="#com.intellij.ide.util.MemberChooser" timestamp="1606286233521">
@@ -289,10 +300,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="277" y="77" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1606234925272" />
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1606658033772">
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1606658495747">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1606658033772" />
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1606658495747" />
     <state x="586" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606549893974">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

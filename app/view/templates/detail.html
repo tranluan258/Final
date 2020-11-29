@@ -236,7 +236,7 @@
                 <div class="list-classmates">
                     <div class="chucvu">
                         <h4 class="chucvusinhvien">Sinh viên</h4>
-                        {% if type == 1 %}
+                        {% if type != 0 %}
                         <form action="add_student" method="post">
                             <button name="btn-add-student" class="btn badge-light add_sinhvien_vao"><i class="fa fa-user-plus " aria-hidden="true"></i></button>
                         </form>
@@ -249,7 +249,7 @@
                         <div class="classmates_name">
                             <img src="../app/view/content/image/students.png">{{ i.name }}
                         </div>
-                        {% if type == 1 %}
+                        {% if type != 0 %}
                         <form action="delete_student" method="post">
                             <input class="currentstudentdelete" name="currentstudentdelete" id="currentstudentdelete" value="{{ i.student }}">
                             <button type="submit" name="deletestudent" class="btn btn-light xoa_sinhvien"><i class="fa fa-user-times" aria-hidden="true"></i></button>
