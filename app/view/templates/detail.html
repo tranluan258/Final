@@ -151,11 +151,6 @@
                         </div>
                         {% endfor %}
                     </li>
-
-
-
-
-
                 </ul>
             </div>
             <div id="classwork" class="container tab-pane stream_stream fade">
@@ -173,16 +168,50 @@
                     <li class="list-group-item">
                         {% for i in notice.data %}
                         {% if i.link is not null %}
-                        <a href="#{{ i.username }}{{ i.idnotice }}{{ i.idnotice }}" class="navbar-collapse card card-body body_stream_noti" data-toggle="collapse">
-                            <div class="text_of_body_stream_noti">{{ i.name }}</div>
+                        {% set name = i.link|split("/") %}
+                        <a href="#{{ i.username }}{{ i.idnotice }}" class="navbar-collapse card card-body body_stream_noti" data-toggle="collapse">
+                            <div class="text_of_body_stream_noti">
+                                <img src="../app/view/content/image/teachers.png">{{ i.name }}
+                                {% if i.type == 1 %}
+                                (GV)
+                                {% elseif i.type == 0 %}
+                                (HS)
+                                {% endif %}
+                            </div>
                             <p>Post on {{ i.datepost }}</p>
                             <p>Nội dung: {{ i.information }}</p>
+                            <span>Tài liệu: </span>
+                            <a href="../{{ i.link }}">{{ name[name|length-1] }}</a>
                         </a>
-                        <div id="{{ i.username }}{{ i.idnotice }}{{ i.idnotice }}" class="collapse thongbao">
-                            <a href="#" target="_self">View detail</a>
-
-                        </div>
                         {% endif %}
+                        <div id="{{ i.username }}{{ i.idnotice }}" class="collapse thongbao">
+                            <p class="titlehoibuon">Bình luận</p>
+                            {% for z in noticecmt %}
+                            {% for j in z[i.idnotice].data %}
+                            <div class="motthangsinhvien">
+                                <div class="caianhcuagiaovien">
+                                    <img src="../app/view/content/image/students.png">
+                                </div>
+                                <div class="student_cmt">
+                                    <label class="student1">{{ j.name }}
+                                        {% if j.type == 1 %}
+                                        (GV)
+                                        {% elseif j.type == 0 %}
+                                        (HS)
+                                        {% endif %}
+                                    </label>
+                                    <label class="haicham">:</label>
+                                    <p class="content_student1">{{ j.comment }}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            {% endfor %}
+                            <form action="notice" method="post" enctype="multipart/form-data">
+                                <input class="currentnotice" name="currentnotice" value="{{ i.idnotice }}">
+                                <button type="submit" class="btn btn-primary" name="viewnotice" id="viewnotice">
+                                    <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>View detail</button>
+                            </form>
+                        </div>
                         {% endfor %}
                     </li>
                 </ul>

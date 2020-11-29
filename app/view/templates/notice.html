@@ -72,6 +72,12 @@
                             <div class="ngaythongbao">
                                 Posted on {{ notice.data[0].datepost }}
                             </div>
+                            {%if notice.data[0].link is not null %}
+                            {% set name = notice.data[0].link|split("/") %}
+                            <div>
+                                <p>Tài liệu: <a href="../{{ notice.data[0].link }}">{{ name[name|length-1] }}</a></p>
+                            </div>
+                            {% endif %}
                         </div>
                     </li>
                 </div>
