@@ -221,6 +221,25 @@
             }
         }
 
+        public function update_notice_info(){
+            $error = '';
+            $idnotice = $_SESSION['currentnotice'];
+            if(isset($_POST['btn_update_notice'])){
+                if(isset($_POST['update_notice'])){
+                    $info = $_POST['update_notice'];
+                    $subject = new SubjectModel();
+                    $data = $subject->update_notice($idnotice,$info);
+                    if($data['code'] == 1){
+                        $error = "Cập nhật thông báo thất bại";
+                    } else {
+                        $error = "Cập nhật thông báo thành công";
+                    }
+                    $_SESSION['error'] = $error;
+                    header("Location: notice");
+                }
+            }
+        }
+
         public function detail()
         {
             $error = 'Xin chào' . ' ' . $_SESSION['yourname'] . '!';;
@@ -279,7 +298,35 @@
         }
 
         public function update_notice(){
-            $this->render('update_notice.html');
+            $subject = new SubjectModel();
+
+            if(isset($_POST['viewnotice'])){
+                unset($_SESSION['currentnotice']);
+            }
+            if (isset($_SESSION['currentnotice'])) {
+                $infonotice = $subject->get_notice_by_id($_SESSION['currentnotice']);
+            }else{
+                $infonotice = $subject->get_notice_by_id($_POST['currentnotice']);
+                $_SESSION['currentnotice'] = $_POST['currentnotice'];
+            }
+            $data = array('type' => $_SESSION['type'],'username' => $_SESSION['username'], 'notice' => $infonotice);
+            $this->render('update_notice.html',$data);
+        }
+
+        public function delete_notice(){
+            $error = '';
+            $idnotice = $_SESSION['currentnotice'];
+            if(isset($_POST['delete_notice'])){
+                $subject = new SubjectModel();
+                $data = $subject->delete_notice($idnotice);
+                if($data['code'] == 1){
+                    $error = "Xóa thông báo thất bại!";
+                } else {
+                    $error = "Xóa thông báo thành công!";
+                }
+                $_SESSION['error'] = $error;
+                header("Location: detail");
+            }
         }
 
     }

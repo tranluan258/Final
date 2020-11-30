@@ -254,6 +254,33 @@
             }
         }
 
+        public function delete_notice($idnotice){
+            $sql = "DELETE FROM `notice_comment` WHERE idnotice = ?";
+            $params = array('i',&$idnotice);
+            $data = $this->query_prepare_delete($sql,$params);
+            $sql1 = "DELETE FROM `notice` WHERE id = ?";
+            $data1 = $this->query_prepare_delete($sql1,$params);
+
+            if($data['code']==0 and $data1['code']==0){
+                return array('code'=>0, 'message'=>'thanh cong');
+            }else{
+                return array('code'=>1, 'message'=>'that bai');
+            }
+        }
+
+        public function update_notice($idnotice,$info){
+            $sql = "UPDATE `notice` SET `information`= ? WHERE id = ?";
+            $params = array('si',&$info,&$idnotice);
+
+            $data = $this->query_prepare_update($sql,$params);
+
+            if($data['code']==1){
+                return array('code'=>1, 'message'=>'thất bại!');
+            }else{
+                return array('code'=>0, 'message'=>'thành công!');
+            }
+        }
+
 
         public function send_email_student($email_teacher,$teacher_name,$email_student,$message){
             $mail = new PHPMailer(true);

@@ -252,7 +252,7 @@
                         {% if type != 0 %}
                         <form action="delete_student" method="post">
                             <input class="currentstudentdelete" name="currentstudentdelete" id="currentstudentdelete" value="{{ i.student }}">
-                            <button type="submit" name="deletestudent" class="btn btn-light xoa_sinhvien"><i class="fa fa-user-times" aria-hidden="true"></i></button>
+                            <button type="submit" name="deletestudent" onclick="return confirm('Xác nhận xóa học sinh')" class="btn btn-light xoa_sinhvien"><i class="fa fa-user-times" aria-hidden="true"></i></button>
                         </form>
                         {% endif %}
                         {% endfor %}
