@@ -240,6 +240,27 @@
             }
         }
 
+        public function update_class_info(){
+            $error = '';
+            $code = $_SESSION['currentcode'];
+            if(isset($_POST['btn_update_class'])){
+                if(isset($_POST['update_class_name']) && isset($_POST['update_class_subject']) && isset($_POST['update_class_room'])){
+                    $classname = $_POST['update_class_name'];
+                    $subjectname = $_POST['update_class_subject'];
+                    $room = $_POST['update_class_room'];
+                    $subject = new SubjectModel();
+                    $data = $subject->update_class($code,$classname,$subjectname,$room);
+                    if($data['code'] == 1){
+                        $error = "Cập nhật lớp học thất bại";
+                    } else {
+                        $error = "Cập nhật lớp học thành công";
+                    }
+                    $_SESSION['error'] = $error;
+                    header("Location: detail");
+                }
+            }
+        }
+
         public function detail()
         {
             $error = 'Xin chào' . ' ' . $_SESSION['yourname'] . '!';;
@@ -279,6 +300,15 @@
             $this->render('detail.html', $data);
         }
 
+        public function update_class(){
+            $subject = new SubjectModel();
+
+            $dataSubject = $subject->get_subject($_SESSION['currentcode']);
+            print_r($dataSubject);
+            $data = array('type' => $_SESSION['type'],'username' => $_SESSION['username'], 'subject' => $dataSubject);
+            $this->render('update_class.html',$data);
+        }
+
         public function notice(){
             $subject = new SubjectModel();
             if(isset($_POST['viewnotice'])){
@@ -300,15 +330,8 @@
         public function update_notice(){
             $subject = new SubjectModel();
 
-            if(isset($_POST['viewnotice'])){
-                unset($_SESSION['currentnotice']);
-            }
-            if (isset($_SESSION['currentnotice'])) {
-                $infonotice = $subject->get_notice_by_id($_SESSION['currentnotice']);
-            }else{
-                $infonotice = $subject->get_notice_by_id($_POST['currentnotice']);
-                $_SESSION['currentnotice'] = $_POST['currentnotice'];
-            }
+            $infonotice = $subject->get_notice_by_id($_SESSION['currentnotice']);
+
             $data = array('type' => $_SESSION['type'],'username' => $_SESSION['username'], 'notice' => $infonotice);
             $this->render('update_notice.html',$data);
         }

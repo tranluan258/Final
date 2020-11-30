@@ -281,6 +281,19 @@
             }
         }
 
+        public function update_class($code,$classname,$subjectname,$room){
+            $sql = "UPDATE `subject` SET `classname`= ? ,`subjectname`= ?,`room`= ? WHERE code = ?";
+            $params = array('ssss',&$classname,&$subjectname,&$room,&$code);
+
+            $data = $this->query_prepare_update($sql,$params);
+
+            if($data['code']==1){
+                return array('code'=>1, 'message'=>'thất bại!');
+            }else{
+                return array('code'=>0, 'message'=>'thành công!');
+            }
+        }
+
 
         public function send_email_student($email_teacher,$teacher_name,$email_student,$message){
             $mail = new PHPMailer(true);
