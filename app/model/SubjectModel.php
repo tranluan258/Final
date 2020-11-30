@@ -268,6 +268,35 @@
             }
         }
 
+        public function get_all_notice($code){
+            $sql = "select id from notice where class = ?";
+            $params = array('s',&$code);
+            $dataSubject = $this->query_prepare_select($sql,$params);
+            if($dataSubject['code'] == 1){
+                $error = 'Lỗi';
+            }else{
+                $data = array();
+                while ($item = $dataSubject['data']->fetch_assoc()){
+                    array_push($data,array('idnotice'=>$item['id']));
+                }
+                return array('data'=>$data);
+            }
+        }
+
+        public function delete_subject($code){
+            $sql = "DELETE FROM `subject` WHERE code = ?";
+
+            $params = array('s',&$code);
+
+            $data = $this->query_prepare_delete($sql,$params);
+
+            if($data['code']==1){
+                return array('code'=>1, 'message'=>'Xóa lớp thất bại!');
+            }else{
+                return array('code'=>0, 'message'=>'Xóa lớp thành công!');
+            }
+        }
+
         public function update_notice($idnotice,$info){
             $sql = "UPDATE `notice` SET `information`= ? WHERE id = ?";
             $params = array('si',&$info,&$idnotice);

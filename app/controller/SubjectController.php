@@ -352,5 +352,32 @@
             }
         }
 
+        public function delete_subject(){
+            $error = '';
+            $code = $_SESSION['currentcode'];
+            if(isset($_POST['delete_subject'])){
+                $subject = new SubjectModel();
+                $all_notice = $subject->get_all_notice($code);
+                foreach ($all_notice as &$notice){
+                    foreach ($notice as &$id){
+                        $delete_notice = $subject->delete_notice($id['idnotice']);
+                        if($delete_notice['code'] == 1){
+                            $error = "Xảy ra lỗi khi xóa lớp";
+                        }else{
+                            $error = "Xóa lớp thành công";
+                        }
+                    }
+                }
+                $delete_class = $subject->delete_subject($code);
+                if($delete_class['code'] == 1){
+                    $error = "Xảy ra lỗi khi xóa lớp";
+                }else{
+                    $error = "Xóa lớp thành công";
+                }
+                $_SESSION['error'] = $error;
+                header("Location: ../");
+            }
+        }
+
     }
 ?>
