@@ -7,6 +7,11 @@
             $user = '';
             $pass = '';
 
+            if(isset($_SESSION['username'])){
+                header("Location: ../");
+                exit();
+            }
+
             if(isset($_COOKIE['username'])){
                 $user = $_COOKIE['username'];
             }

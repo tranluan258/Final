@@ -271,11 +271,20 @@
                         <h4>Tài liệu</h4>
                     </div>
                     <br>
+                    {% for i in notice.data %}
+                    {% if i.link is not null %}
+                    {% set name = i.link|split("/") %}
+                    {% set file = name[name|length-1]|split(".") %}
+                    {% set file_type = file[file|length-1] %}
+                    {% if file_type == 'docx' or file_type == 'pdf'  %}
                     <div class="name-teachers">
                         <h4 class="name-teachers">
-                            Book.docs
+                            <a href="../{{ i.link }}">{{ name[name|length-1] }}</a>
                         </h4>
                     </div>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
                     <br>
                 </div>
 
@@ -284,11 +293,20 @@
                         <h4>Labs</h4>
                     </div>
                     <br>
+                    {% for i in notice.data %}
+                    {% if i.link is not null %}
+                    {% set name = i.link|split("/") %}
+                    {% set file = name[name|length-1]|split(".") %}
+                    {% set file_type = file[file|length-1] %}
+                    {% if file_type == 'rar' or file_type == 'zip' %}
                     <div class="name-classmates">
                         <h4 class="name-classmates">
-                            Lab1.rar
+                            <a href="../{{ i.link }}">{{ name[name|length-1] }}</a>
                         </h4>
                     </div>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
                 </div>
                 <br>
                 <div class="list-classmates">
@@ -296,11 +314,40 @@
                         <h4>Slides</h4>
                     </div>
                     <br>
+                    {% for i in notice.data %}
+                    {% if i.link is not null %}
+                    {% set name = i.link|split("/") %}
+                    {% set file = name[name|length-1]|split(".") %}
+                    {% set file_type = file[file|length-1] %}
+                    {% if file_type == 'ppt' or file_type == 'pptx' %}
                     <div class="name-classmates">
                         <h4 class="name-classmates">
-                            Lab1.ppt
+                            <a href="../{{ i.link }}">{{ name[name|length-1] }}</a>
                         </h4>
                     </div>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="list-classmates">
+                    <div class="chucvu">
+                        <h4>Other</h4>
+                    </div>
+                    <br>
+                    {% for i in notice.data %}
+                    {% if i.link is not null %}
+                    {% set name = i.link|split("/") %}
+                    {% set file = name[name|length-1]|split(".") %}
+                    {% set file_type = file[file|length-1] %}
+                    {% if file_type != 'ppt' and file_type != 'pptx' and file_type != 'rar' and file_type != 'zip' and file_type != 'docx' and file_type != 'pdf' %}
+                    <div class="name-classmates">
+                        <h4 class="name-classmates">
+                            <a href="../{{ i.link }}">{{ name[name|length-1] }}</a>
+                        </h4>
+                    </div>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
                 </div>
             </div>
 

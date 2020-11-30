@@ -10,7 +10,7 @@
         {
             $error = 'Xin chào'. ' '. $_SESSION['yourname'] . '!';
             if(!isset($_SESSION['username'])){
-                header("Location: http://localhost/Final/account/login");
+                header("Location: account/login");
                 exit();
             }else{
                 $home = new HomeModel();
