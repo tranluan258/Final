@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+}
+
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.editnoticecontent {
+    height: 100px;
+}
+
+.labeleditclass {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+.titleeditclass {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.editinfroclass {
+    border-radius: 5px;
+    background-color: #F8F9FA;
+    padding: 20px;
+    width: 60%;
+    padding-top: 40px;
+    margin: auto;
+    margin-top: 5%;
+    border-radius: 25px;
+}
+
+.editclass25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.editclass75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+.editclassrow:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.editclassrowsave {
+    padding-left: 40%;
+    width: 100%;
+}
+
+.editnoticerowsave {
+    width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+    .editclass25,
+    .editclass75,
+    input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+    .editinfroclass {
+        width: 60%;
+    }
+}

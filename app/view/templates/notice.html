@@ -73,6 +73,7 @@
                             <div class="ngaythongbao">
                                 Posted on {{ notice.data[0].datepost }}
                             </div>
+
                             {%if notice.data[0].link is not null %}
 
                             {% set name = notice.data[0].link|split("/") %}
@@ -88,6 +89,9 @@
                         <p>
                             {{ notice.data[0].info }}
                         </p>
+                        {% if notice.data[0].username == username %}
+                        <a href="update_notice" class="btn btn-light xoa_sinhvien"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                        {% endif %}
                     </li>
                 </div>
                 <div class="phancomment">

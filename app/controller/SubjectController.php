@@ -273,10 +273,13 @@
                 $infonotice = $subject->get_notice_by_id($_POST['currentnotice']);
                 $_SESSION['currentnotice'] = $_POST['currentnotice'];
             }
-
-            $data = array('type' => $_SESSION['type'], 'comment' => $result, 'notice' => $infonotice);
+            $data = array('type' => $_SESSION['type'],'username' => $_SESSION['username'], 'comment' => $result, 'notice' => $infonotice);
 
             $this->render('notice.html', $data);
+        }
+
+        public function update_notice(){
+            $this->render('update_notice.html');
         }
 
     }
