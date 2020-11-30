@@ -7,7 +7,7 @@
 
         function get_all()
         {
-            $sql = 'select * from account  where not type = 2';
+            $sql = 'select * from account';
             $data = $this->query_account($sql);
 
             return array('data'=>$data['data']);
@@ -16,6 +16,13 @@
         function get_by_id($id)
         {
 
+        }
+
+        public function get_account($username){
+            $sql = "select * from account where not username = '$username'";
+            $data = $this->query_account($sql);
+
+            return array('data'=>$data['data']);
         }
 
         public function login($username,$pass){
@@ -213,18 +220,11 @@
             return $data['data'];
         }
 
-        public function update_type($username){
-            $type_new = 0;
+        public function update_type($username,$type){
             $sql = 'select type from account where username = ?';
             $param = array('s',&$username);
             $user = $this->query_one_select($sql,$param);
-            $type = $user['data']['type'];
-            if($type == 1){
-                $type_new = 0;
-            }else{
-                $type_new = 1;
-            }
-            $sql = "update account set type = $type_new where username = ?";
+            $sql = "update account set type = $type where username = ?";
             $param = array('s',&$username);
             $data = $this->query_prepare_update($sql,$param);
 

@@ -176,9 +176,10 @@
             $account = new AccountModel();
            if(isset($_POST['set_type'])){
                $username = $_POST['username'];
-               $result = $account->update_type($username);
+               $type = $_POST['choose_type'];
+               $result = $account->update_type($username,$type);
            }
-           $data = $account->get_all();
+           $data = $account->get_account($_SESSION['username']);
            $this->render('view_account.html',array('data'=>$data));
         }
 

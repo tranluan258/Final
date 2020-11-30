@@ -30,8 +30,7 @@
                 <p class="label_settype_pq">Cấp quyền</p>
             </div>
         </div>
-    </div>
-    {% for i in data.data %}
+        {% for i in data.data %}
     <div class="col-md-12 col-sm-12 col-xs-12 row-account">
         <div class="account_box">
             <form action="" method="post">
@@ -41,15 +40,20 @@
                     <p class="name_pq">{{ i.yourname }}</p>
                     {% if i.type == 0 %}
                     <p class="type_pq">Sinh Viên</p>
-                    {% else %}
+                    {% elseif i.type == 1 %}
                     <p class="type_pq">Giảng Viên</p>
+                    {% else %}
+                    <p class="type_pq">Admin</p>
                     {% endif %}
+                    Admin <input type="radio" name="choose_type" value="2">
+                    Giảng viên <input type="radio" name="choose_type" value="1">
+                    Sinh viên <input type="radio" name="choose_type" value="0">
                     <button type="submit" name="set_type" class="button_set_gv">Cấp quyền</button>
                 </div>
             </form>
         </div>
     </div>
-    {% endfor %}
+        {% endfor %}
 </div>
 </body>
 </html>
