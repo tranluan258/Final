@@ -4,7 +4,7 @@
     font-family: 'Helvetica Neue';
     font-size: 16px;
     font-weight: bold;
-    background: url('./image/login.jpg') no-repeat;
+    background: url('app/view/content/image/login.jpg') no-repeat;
     background-size: cover;
     width: 100%;
     height: 100%;
@@ -329,7 +329,7 @@ input[type="email"]:focus {
     font-family: 'Helvetica Neue';
     font-size: 16px;
     font-weight: bold;
-    background: url('./image/login.jpg') no-repeat;
+    background: url('app/view/content/image/login.jpg') no-repeat;
     background-size: cover;
     width: 100%;
     height: 100%;
@@ -403,7 +403,7 @@ input[type="email"]:focus {
 .subject_homepage {
     border-radius: 10px 10px 10px 10px;
     background-color: #c7c7c7;
-    background-image: url("image/bgSubject.jpg");
+    background-image: url("app/view/content/image/bgSubject.jpg");
     margin-top: 15px;
 }
 
