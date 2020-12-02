@@ -12,10 +12,7 @@
   <component name="ChangeListManager">
     <list default="true" id="37019a64-43c3-4573-98e9-aef5311ad553" name="Default Changelist" comment="send email notice">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controller/SubjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controller/SubjectController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/BaseModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/BaseModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/model/SubjectModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/SubjectModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/view/templates/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/templates/detail.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +109,7 @@
       <workItem from="1606715443617" duration="3417000" />
       <workItem from="1606728047329" duration="1802000" />
       <workItem from="1606731836463" duration="655000" />
+      <workItem from="1606885025515" duration="833000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1606289379352</created>
@@ -288,7 +286,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606884965593</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="send email notice">
+      <created>1606885053793</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1606885053793</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,10 +360,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="618" y="346" key="VCS.ChangelistChooser/0.0.1536.864@0.0.1536.864" timestamp="1606732334407" />
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1606884974158">
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1606885055601">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1606884974158" />
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1606885055601" />
     <state x="586" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606727906969">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

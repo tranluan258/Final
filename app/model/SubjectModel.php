@@ -285,16 +285,18 @@
         }
 
         public function delete_subject($code){
-            $sql = "DELETE FROM `subject` WHERE code = ?";
-
             $params = array('s',&$code);
 
+            $sql1 = "DELETE FROM `subject_info` WHERE code = ?";
+            $data1 = $this->query_prepare_delete($sql1,$params);
+
+            $sql = "DELETE FROM `subject` WHERE code = ?";
             $data = $this->query_prepare_delete($sql,$params);
 
-            if($data['code']==1){
-                return array('code'=>1, 'message'=>'Xóa lớp thất bại!');
-            }else{
+            if($data['code']== 0 and $data1['code'] == 0){
                 return array('code'=>0, 'message'=>'Xóa lớp thành công!');
+            }else{
+                return array('code'=>1, 'message'=>'Xóa lớp thất bại!');
             }
         }
 
