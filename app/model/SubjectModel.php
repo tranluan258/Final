@@ -135,6 +135,7 @@
             }
         }
 
+
         public function get_subject($code){
             $sql = "select classname, subjectname, room from subject where code = ?";
             $params = array('s',&$code);

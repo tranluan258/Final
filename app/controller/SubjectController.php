@@ -77,17 +77,38 @@
                 $info = '';
                 $username = $_SESSION['username'];
                 $code = $_SESSION['currentcode'];
+
                 if(isset($_POST['noticeinfo'])){
                     $noticeinfo = $_POST['noticeinfo'];
                     if(empty($noticeinfo)){
                         $error = 'Vui lòng nhập thông báo';
                     }else{
                         $subject = new SubjectModel();
+                        $data_subject = $subject->get_subject($code);
+                        $subject_class = $data_subject['data'][0]['classname'];
+                        $subject_name = $data_subject['data'][0]['subjectname'];
+                        $subject_room = $data_subject['data'][0]['room'];
+
+                        $data_email_user_post = $subject->get_email_by_username($_SESSION['username']);
+                        $email_user_post = $data_email_user_post['email'];
+                        $user_post_name = $data_email_user_post['name'];
+
+                        $message = "Lớp <b>$subject_class</b>, Môn <b>$subject_name</b>, Phòng <b>$subject_room</b>: <b>$user_post_name</b> đã đăng một thông báo";
                         $result = $subject->add_notice($code,$username,$noticeinfo);
                         if ($result['code'] == 1) {
                             $error = 'Đăng thông báo thất bại';
                         } else {
                             $error = 'Đăng thông báo thành công';
+                        }
+                        $listStudent = $subject->view_people_student($code);
+                        foreach ($listStudent as &$lStudent){
+                            foreach ($lStudent as &$value){
+                                $student_user = $value['student'];
+                                $data_email_student = $subject->get_email_by_username($student_user);
+                                $email_student = $data_email_student['email'];
+
+                                $subject->send_email_student($email_user_post,$user_post_name,$email_student,$message);
+                            }
                         }
                     }
                     $_SESSION['error'] = $error;
@@ -133,6 +154,17 @@
                     }else{
                         $subject = new SubjectModel();
 
+                        $data_subject = $subject->get_subject($code);
+                        $subject_class = $data_subject['data'][0]['classname'];
+                        $subject_name = $data_subject['data'][0]['subjectname'];
+                        $subject_room = $data_subject['data'][0]['room'];
+
+                        $data_email_user_post = $subject->get_email_by_username($_SESSION['username']);
+                        $email_user_post = $data_email_user_post['email'];
+                        $user_post_name = $data_email_user_post['name'];
+
+                        $message = "Lớp <b>$subject_class</b>, Môn <b>$subject_name</b>, Phòng <b>$subject_room</b>: <b>$user_post_name</b> đã đăng một bài tập";
+
                         $file_name = $_FILES['file']['name'];
                         $link = 'app/upload/'.$file_name;
                         print_r($file_name);
@@ -144,6 +176,17 @@
                             $error = 'Đăng thông báo thất bại';
                         } else {
                             $error = 'Đăng thông báo thành công';
+                        }
+
+                        $listStudent = $subject->view_people_student($code);
+                        foreach ($listStudent as &$lStudent){
+                            foreach ($lStudent as &$value){
+                                $student_user = $value['student'];
+                                $data_email_student = $subject->get_email_by_username($student_user);
+                                $email_student = $data_email_student['email'];
+
+                                $subject->send_email_student($email_user_post,$user_post_name,$email_student,$message);
+                            }
                         }
 
 
@@ -220,6 +263,7 @@
                 header("Location: notice");
             }
         }
+
 
         public function update_notice_info(){
             $error = '';
