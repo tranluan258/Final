@@ -400,13 +400,6 @@ input[type="email"]:focus {
     width: 100%;
     height: 100%;
 }
-
-
-/*img {*/
-/*    width: 100%;*/
-/*    height: 220px;*/
-/*}*/
-
 .subject_homepage {
     border-radius: 10px 10px 10px 10px;
     background-color: #c7c7c7;
