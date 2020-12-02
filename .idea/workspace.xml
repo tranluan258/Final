@@ -11,8 +11,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37019a64-43c3-4573-98e9-aef5311ad553" name="Default Changelist" comment="merge file">
+      <change afterPath="$PROJECT_DIR$/app/view/content/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/view/content/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/content/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/templates/add_student.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/templates/add_student.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/templates/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/templates/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/templates/notice.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/templates/notice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/view/templates/update_notice.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/view/templates/update_notice.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/platform_check.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/platform_check.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +34,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -112,7 +119,8 @@
       <workItem from="1606823383170" duration="603000" />
       <workItem from="1606881114392" duration="1216000" />
       <workItem from="1606882385674" duration="506000" />
-      <workItem from="1606882908131" duration="529000" />
+      <workItem from="1606882908131" duration="852000" />
+      <workItem from="1606883775480" duration="212000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1606289379352</created>
@@ -296,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606883050788</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="merge file">
+      <created>1606883446471</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1606883446471</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -367,10 +382,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="618" y="346" key="VCS.ChangelistChooser/0.0.1536.864@0.0.1536.864" timestamp="1606883419892" />
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1606883057638">
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2" timestamp="1606883449427">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1606883057638" />
+    <state x="361" y="165" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1606883449427" />
     <state x="586" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606883348790">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

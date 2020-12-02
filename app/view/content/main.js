@@ -58,3 +58,27 @@ function auto_grow(element) {
     element.style.height = "5px";
     element.style.height = (element.scrollHeight) + "px";
 }
+
+
+function auto_grow(element) {
+    element.style.height = "5px";
+    element.style.height = (element.scrollHeight) + "px";
+}
+
+
+
+function selectAll() {
+    var items = document.getElementsByName('liststudent[]');
+    for (var i = 0; i < items.length; i++) {
+        if (items[i].type == 'checkbox')
+            items[i].checked = true;
+    }
+}
+
+function UnSelectAll() {
+    var items = document.getElementsByName('liststudent[]');
+    for (var i = 0; i < items.length; i++) {
+        if (items[i].type == 'checkbox')
+            items[i].checked = false;
+    }
+}
