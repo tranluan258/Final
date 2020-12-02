@@ -167,7 +167,6 @@
 
                         $file_name = $_FILES['file']['name'];
                         $link = 'app/upload/'.$file_name;
-                        print_r($file_name);
                         $result = $subject->add_classwork($code,$username,$noticeinfo,$link);
                         move_uploaded_file($_FILES['file']['tmp_name'],$link);
 
@@ -348,7 +347,6 @@
             $subject = new SubjectModel();
 
             $dataSubject = $subject->get_subject($_SESSION['currentcode']);
-            print_r($dataSubject);
             $data = array('type' => $_SESSION['type'],'username' => $_SESSION['username'], 'subject' => $dataSubject);
             $this->render('update_class.html',$data);
         }
