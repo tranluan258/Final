@@ -157,6 +157,7 @@
             </div>
             <div id="classwork" class="container tab-pane stream_stream fade">
                 <ul class="list-group">
+                    {% if type != 0 %}
                     <li class="list-group-item newpost">
                         <div class="text_with_buttonpost">
                             <form action="add_classwork" method="post" enctype="multipart/form-data">
@@ -166,6 +167,7 @@
                             </form>
                         </div>
                     </li>
+                    {% endif %}
 
                     <li class="list-group-item">
                         {% for i in notice.data %}
